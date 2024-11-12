@@ -1,0 +1,1213 @@
+Timing Analyzer report for prime
+Sun Nov 10 22:21:26 2024
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1200mV 85C Model Setup Summary
+  8. Slow 1200mV 85C Model Hold Summary
+  9. Slow 1200mV 85C Model Recovery Summary
+ 10. Slow 1200mV 85C Model Removal Summary
+ 11. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1200mV 85C Model Setup: 'clk'
+ 13. Slow 1200mV 85C Model Hold: 'clk'
+ 14. Slow 1200mV 85C Model Metastability Summary
+ 15. Slow 1200mV 0C Model Fmax Summary
+ 16. Slow 1200mV 0C Model Setup Summary
+ 17. Slow 1200mV 0C Model Hold Summary
+ 18. Slow 1200mV 0C Model Recovery Summary
+ 19. Slow 1200mV 0C Model Removal Summary
+ 20. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 21. Slow 1200mV 0C Model Setup: 'clk'
+ 22. Slow 1200mV 0C Model Hold: 'clk'
+ 23. Slow 1200mV 0C Model Metastability Summary
+ 24. Fast 1200mV 0C Model Setup Summary
+ 25. Fast 1200mV 0C Model Hold Summary
+ 26. Fast 1200mV 0C Model Recovery Summary
+ 27. Fast 1200mV 0C Model Removal Summary
+ 28. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 29. Fast 1200mV 0C Model Setup: 'clk'
+ 30. Fast 1200mV 0C Model Hold: 'clk'
+ 31. Fast 1200mV 0C Model Metastability Summary
+ 32. Multicorner Timing Analysis Summary
+ 33. Board Trace Model Assignments
+ 34. Input Transition Times
+ 35. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 36. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 37. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 38. Setup Transfers
+ 39. Hold Transfers
+ 40. Report TCCS
+ 41. Report RSKM
+ 42. Unconstrained Paths Summary
+ 43. Clock Status Summary
+ 44. Unconstrained Input Ports
+ 45. Unconstrained Output Ports
+ 46. Unconstrained Input Ports
+ 47. Unconstrained Output Ports
+ 48. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2024  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++--------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                        ;
++-----------------------+--------------------------------------------------------+
+; Quartus Prime Version ; Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                                 ;
+; Revision Name         ; prime                                                  ;
+; Device Family         ; Cyclone IV E                                           ;
+; Device Name           ; EP4CE6E22C8                                            ;
+; Timing Models         ; Final                                                  ;
+; Delay Model           ; Combined                                               ;
+; Rise/Fall Delays      ; Enabled                                                ;
++-----------------------+--------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 32          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.07        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.5%      ;
+;     Processors 3-16        ;   0.5%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary               ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 212.13 MHz ; 212.13 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++-------------------------------------+
+; Slow 1200mV 85C Model Setup Summary ;
++-------+--------+--------------------+
+; Clock ; Slack  ; End Point TNS      ;
++-------+--------+--------------------+
+; clk   ; -3.714 ; -163.861           ;
++-------+--------+--------------------+
+
+
++------------------------------------+
+; Slow 1200mV 85C Model Hold Summary ;
++-------+-------+--------------------+
+; Clock ; Slack ; End Point TNS      ;
++-------+-------+--------------------+
+; clk   ; 0.452 ; 0.000              ;
++-------+-------+--------------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++-------+--------+----------------------------------+
+; Clock ; Slack  ; End Point TNS                    ;
++-------+--------+----------------------------------+
+; clk   ; -3.000 ; -93.707                          ;
++-------+--------+----------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'clk'                                                                                                                                           ;
++--------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                     ; To Node                                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -3.714 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[10] ; clk          ; clk         ; 1.000        ; -0.542     ; 4.173      ;
+; -3.713 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[9]  ; clk          ; clk         ; 1.000        ; -0.542     ; 4.172      ;
+; -3.711 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[5]  ; clk          ; clk         ; 1.000        ; -0.542     ; 4.170      ;
+; -3.711 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[6]  ; clk          ; clk         ; 1.000        ; -0.542     ; 4.170      ;
+; -3.710 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[4]  ; clk          ; clk         ; 1.000        ; -0.542     ; 4.169      ;
+; -3.708 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[1]  ; clk          ; clk         ; 1.000        ; -0.542     ; 4.167      ;
+; -3.708 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[2]  ; clk          ; clk         ; 1.000        ; -0.542     ; 4.167      ;
+; -3.707 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[0]  ; clk          ; clk         ; 1.000        ; -0.542     ; 4.166      ;
+; -3.691 ; usuario:us|button:btn_decrementar|counter[14] ; usuario:us|button:btn_decrementar|counter[11] ; clk          ; clk         ; 1.000        ; -0.080     ; 4.612      ;
+; -3.690 ; usuario:us|button:btn_decrementar|counter[14] ; usuario:us|button:btn_decrementar|counter[12] ; clk          ; clk         ; 1.000        ; -0.080     ; 4.611      ;
+; -3.689 ; usuario:us|button:btn_decrementar|counter[14] ; usuario:us|button:btn_decrementar|counter[13] ; clk          ; clk         ; 1.000        ; -0.080     ; 4.610      ;
+; -3.688 ; usuario:us|button:btn_decrementar|counter[14] ; usuario:us|button:btn_decrementar|counter[14] ; clk          ; clk         ; 1.000        ; -0.080     ; 4.609      ;
+; -3.687 ; usuario:us|button:btn_decrementar|counter[14] ; usuario:us|button:btn_decrementar|counter[15] ; clk          ; clk         ; 1.000        ; -0.080     ; 4.608      ;
+; -3.684 ; usuario:us|button:btn_decrementar|counter[14] ; usuario:us|button:btn_decrementar|counter[17] ; clk          ; clk         ; 1.000        ; -0.080     ; 4.605      ;
+; -3.682 ; usuario:us|button:btn_decrementar|counter[13] ; usuario:us|button:btn_decrementar|counter[11] ; clk          ; clk         ; 1.000        ; -0.080     ; 4.603      ;
+; -3.681 ; usuario:us|button:btn_decrementar|counter[13] ; usuario:us|button:btn_decrementar|counter[12] ; clk          ; clk         ; 1.000        ; -0.080     ; 4.602      ;
+; -3.680 ; usuario:us|button:btn_decrementar|counter[14] ; usuario:us|button:btn_decrementar|counter[19] ; clk          ; clk         ; 1.000        ; -0.080     ; 4.601      ;
+; -3.680 ; usuario:us|button:btn_decrementar|counter[13] ; usuario:us|button:btn_decrementar|counter[13] ; clk          ; clk         ; 1.000        ; -0.080     ; 4.601      ;
+; -3.679 ; usuario:us|button:btn_decrementar|counter[13] ; usuario:us|button:btn_decrementar|counter[14] ; clk          ; clk         ; 1.000        ; -0.080     ; 4.600      ;
+; -3.678 ; usuario:us|button:btn_decrementar|counter[13] ; usuario:us|button:btn_decrementar|counter[15] ; clk          ; clk         ; 1.000        ; -0.080     ; 4.599      ;
+; -3.675 ; usuario:us|button:btn_decrementar|counter[13] ; usuario:us|button:btn_decrementar|counter[17] ; clk          ; clk         ; 1.000        ; -0.080     ; 4.596      ;
+; -3.671 ; usuario:us|button:btn_decrementar|counter[13] ; usuario:us|button:btn_decrementar|counter[19] ; clk          ; clk         ; 1.000        ; -0.080     ; 4.592      ;
+; -3.654 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[8]  ; clk          ; clk         ; 1.000        ; -0.540     ; 4.115      ;
+; -3.651 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[19] ; clk          ; clk         ; 1.000        ; -0.540     ; 4.112      ;
+; -3.647 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[15] ; clk          ; clk         ; 1.000        ; -0.540     ; 4.108      ;
+; -3.646 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[13] ; clk          ; clk         ; 1.000        ; -0.540     ; 4.107      ;
+; -3.646 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[14] ; clk          ; clk         ; 1.000        ; -0.540     ; 4.107      ;
+; -3.644 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[11] ; clk          ; clk         ; 1.000        ; -0.540     ; 4.105      ;
+; -3.631 ; usuario:us|button:btn_decrementar|counter[18] ; usuario:us|button:btn_decrementar|counter[11] ; clk          ; clk         ; 1.000        ; -0.531     ; 4.101      ;
+; -3.630 ; usuario:us|button:btn_decrementar|counter[18] ; usuario:us|button:btn_decrementar|counter[12] ; clk          ; clk         ; 1.000        ; -0.531     ; 4.100      ;
+; -3.629 ; usuario:us|button:btn_decrementar|counter[18] ; usuario:us|button:btn_decrementar|counter[13] ; clk          ; clk         ; 1.000        ; -0.531     ; 4.099      ;
+; -3.628 ; usuario:us|button:btn_decrementar|counter[18] ; usuario:us|button:btn_decrementar|counter[14] ; clk          ; clk         ; 1.000        ; -0.531     ; 4.098      ;
+; -3.627 ; usuario:us|button:btn_decrementar|counter[18] ; usuario:us|button:btn_decrementar|counter[15] ; clk          ; clk         ; 1.000        ; -0.531     ; 4.097      ;
+; -3.624 ; usuario:us|button:btn_decrementar|counter[18] ; usuario:us|button:btn_decrementar|counter[17] ; clk          ; clk         ; 1.000        ; -0.531     ; 4.094      ;
+; -3.623 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[9]  ; clk          ; clk         ; 1.000        ; -0.083     ; 4.541      ;
+; -3.623 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[10] ; clk          ; clk         ; 1.000        ; -0.083     ; 4.541      ;
+; -3.621 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[5]  ; clk          ; clk         ; 1.000        ; -0.083     ; 4.539      ;
+; -3.621 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[6]  ; clk          ; clk         ; 1.000        ; -0.083     ; 4.539      ;
+; -3.620 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[4]  ; clk          ; clk         ; 1.000        ; -0.083     ; 4.538      ;
+; -3.620 ; usuario:us|button:btn_decrementar|counter[18] ; usuario:us|button:btn_decrementar|counter[19] ; clk          ; clk         ; 1.000        ; -0.531     ; 4.090      ;
+; -3.619 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[2]  ; clk          ; clk         ; 1.000        ; -0.083     ; 4.537      ;
+; -3.618 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[1]  ; clk          ; clk         ; 1.000        ; -0.083     ; 4.536      ;
+; -3.617 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[0]  ; clk          ; clk         ; 1.000        ; -0.083     ; 4.535      ;
+; -3.596 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[10] ; clk          ; clk         ; 1.000        ; -0.082     ; 4.515      ;
+; -3.595 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[9]  ; clk          ; clk         ; 1.000        ; -0.082     ; 4.514      ;
+; -3.593 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[5]  ; clk          ; clk         ; 1.000        ; -0.082     ; 4.512      ;
+; -3.593 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[6]  ; clk          ; clk         ; 1.000        ; -0.082     ; 4.512      ;
+; -3.592 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[4]  ; clk          ; clk         ; 1.000        ; -0.082     ; 4.511      ;
+; -3.590 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[1]  ; clk          ; clk         ; 1.000        ; -0.082     ; 4.509      ;
+; -3.590 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[2]  ; clk          ; clk         ; 1.000        ; -0.082     ; 4.509      ;
+; -3.589 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[0]  ; clk          ; clk         ; 1.000        ; -0.082     ; 4.508      ;
+; -3.587 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[10] ; clk          ; clk         ; 1.000        ; -0.082     ; 4.506      ;
+; -3.586 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[9]  ; clk          ; clk         ; 1.000        ; -0.082     ; 4.505      ;
+; -3.584 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[5]  ; clk          ; clk         ; 1.000        ; -0.082     ; 4.503      ;
+; -3.584 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[6]  ; clk          ; clk         ; 1.000        ; -0.082     ; 4.503      ;
+; -3.583 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[4]  ; clk          ; clk         ; 1.000        ; -0.082     ; 4.502      ;
+; -3.581 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[1]  ; clk          ; clk         ; 1.000        ; -0.082     ; 4.500      ;
+; -3.581 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[2]  ; clk          ; clk         ; 1.000        ; -0.082     ; 4.500      ;
+; -3.580 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[0]  ; clk          ; clk         ; 1.000        ; -0.082     ; 4.499      ;
+; -3.566 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[10] ; clk          ; clk         ; 1.000        ; -0.542     ; 4.025      ;
+; -3.565 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[9]  ; clk          ; clk         ; 1.000        ; -0.542     ; 4.024      ;
+; -3.563 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[8]  ; clk          ; clk         ; 1.000        ; -0.081     ; 4.483      ;
+; -3.563 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[5]  ; clk          ; clk         ; 1.000        ; -0.542     ; 4.022      ;
+; -3.563 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[6]  ; clk          ; clk         ; 1.000        ; -0.542     ; 4.022      ;
+; -3.562 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[4]  ; clk          ; clk         ; 1.000        ; -0.542     ; 4.021      ;
+; -3.561 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[19] ; clk          ; clk         ; 1.000        ; -0.081     ; 4.481      ;
+; -3.560 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[10] ; clk          ; clk         ; 1.000        ; -0.082     ; 4.479      ;
+; -3.560 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[1]  ; clk          ; clk         ; 1.000        ; -0.542     ; 4.019      ;
+; -3.560 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[2]  ; clk          ; clk         ; 1.000        ; -0.542     ; 4.019      ;
+; -3.559 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[9]  ; clk          ; clk         ; 1.000        ; -0.082     ; 4.478      ;
+; -3.559 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[0]  ; clk          ; clk         ; 1.000        ; -0.542     ; 4.018      ;
+; -3.557 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[15] ; clk          ; clk         ; 1.000        ; -0.081     ; 4.477      ;
+; -3.557 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[14] ; clk          ; clk         ; 1.000        ; -0.081     ; 4.477      ;
+; -3.557 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[5]  ; clk          ; clk         ; 1.000        ; -0.082     ; 4.476      ;
+; -3.557 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[6]  ; clk          ; clk         ; 1.000        ; -0.082     ; 4.476      ;
+; -3.556 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[13] ; clk          ; clk         ; 1.000        ; -0.081     ; 4.476      ;
+; -3.556 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[4]  ; clk          ; clk         ; 1.000        ; -0.082     ; 4.475      ;
+; -3.555 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[11] ; clk          ; clk         ; 1.000        ; -0.081     ; 4.475      ;
+; -3.554 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[1]  ; clk          ; clk         ; 1.000        ; -0.082     ; 4.473      ;
+; -3.554 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[2]  ; clk          ; clk         ; 1.000        ; -0.082     ; 4.473      ;
+; -3.553 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[0]  ; clk          ; clk         ; 1.000        ; -0.082     ; 4.472      ;
+; -3.536 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[8]  ; clk          ; clk         ; 1.000        ; -0.080     ; 4.457      ;
+; -3.533 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[19] ; clk          ; clk         ; 1.000        ; -0.080     ; 4.454      ;
+; -3.529 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[15] ; clk          ; clk         ; 1.000        ; -0.080     ; 4.450      ;
+; -3.528 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[13] ; clk          ; clk         ; 1.000        ; -0.080     ; 4.449      ;
+; -3.528 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[14] ; clk          ; clk         ; 1.000        ; -0.080     ; 4.449      ;
+; -3.527 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[8]  ; clk          ; clk         ; 1.000        ; -0.080     ; 4.448      ;
+; -3.526 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[11] ; clk          ; clk         ; 1.000        ; -0.080     ; 4.447      ;
+; -3.524 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[19] ; clk          ; clk         ; 1.000        ; -0.080     ; 4.445      ;
+; -3.520 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[15] ; clk          ; clk         ; 1.000        ; -0.080     ; 4.441      ;
+; -3.519 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[13] ; clk          ; clk         ; 1.000        ; -0.080     ; 4.440      ;
+; -3.519 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[14] ; clk          ; clk         ; 1.000        ; -0.080     ; 4.440      ;
+; -3.517 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[11] ; clk          ; clk         ; 1.000        ; -0.080     ; 4.438      ;
+; -3.506 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[8]  ; clk          ; clk         ; 1.000        ; -0.540     ; 3.967      ;
+; -3.503 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[19] ; clk          ; clk         ; 1.000        ; -0.540     ; 3.964      ;
+; -3.500 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[8]  ; clk          ; clk         ; 1.000        ; -0.080     ; 4.421      ;
+; -3.499 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[15] ; clk          ; clk         ; 1.000        ; -0.540     ; 3.960      ;
+; -3.498 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[13] ; clk          ; clk         ; 1.000        ; -0.540     ; 3.959      ;
+; -3.498 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[14] ; clk          ; clk         ; 1.000        ; -0.540     ; 3.959      ;
+; -3.498 ; usuario:us|button:btn_decrementar|counter[16] ; usuario:us|button:btn_decrementar|counter[11] ; clk          ; clk         ; 1.000        ; -0.531     ; 3.968      ;
++--------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'clk'                                                                                                                                           ;
++-------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                     ; To Node                                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.452 ; usuario:us|toggler:tgl_i|q_o                  ; usuario:us|toggler:tgl_i|q_o                  ; clk          ; clk         ; 0.000        ; 0.082      ; 0.746      ;
+; 0.452 ; usuario:us|button:btn_incrementar|btn_deb     ; usuario:us|button:btn_incrementar|btn_deb     ; clk          ; clk         ; 0.000        ; 0.082      ; 0.746      ;
+; 0.453 ; usuario:us|toggler:tgl_d|q_o                  ; usuario:us|toggler:tgl_d|q_o                  ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
+; 0.454 ; usuario:us|data_i                             ; usuario:us|data_i                             ; clk          ; clk         ; 0.000        ; 0.080      ; 0.746      ;
+; 0.454 ; usuario:us|button:btn_decrementar|btn_deb     ; usuario:us|button:btn_decrementar|btn_deb     ; clk          ; clk         ; 0.000        ; 0.080      ; 0.746      ;
+; 0.482 ; usuario:us|button:btn_incrementar|pressed_o   ; usuario:us|toggler:tgl_i|q_o                  ; clk          ; clk         ; 0.000        ; 0.082      ; 0.776      ;
+; 0.491 ; usuario:us|button:btn_decrementar|counter[21] ; usuario:us|button:btn_decrementar|counter[21] ; clk          ; clk         ; 0.000        ; 0.099      ; 0.802      ;
+; 0.491 ; usuario:us|button:btn_incrementar|counter[21] ; usuario:us|button:btn_incrementar|counter[21] ; clk          ; clk         ; 0.000        ; 0.099      ; 0.802      ;
+; 0.629 ; usuario:us|button:btn_decrementar|btn_deb_r   ; usuario:us|button:btn_decrementar|pressed_o   ; clk          ; clk         ; 0.000        ; 0.080      ; 0.921      ;
+; 0.641 ; usuario:us|button:btn_incrementar|counter[19] ; usuario:us|button:btn_incrementar|counter[20] ; clk          ; clk         ; 0.000        ; 0.541      ; 1.394      ;
+; 0.645 ; usuario:us|button:btn_incrementar|counter[6]  ; usuario:us|button:btn_incrementar|counter[7]  ; clk          ; clk         ; 0.000        ; 0.542      ; 1.399      ;
+; 0.648 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[3]  ; clk          ; clk         ; 0.000        ; 0.542      ; 1.402      ;
+; 0.650 ; usuario:us|button:btn_decrementar|counter[17] ; usuario:us|button:btn_decrementar|counter[18] ; clk          ; clk         ; 0.000        ; 0.531      ; 1.393      ;
+; 0.656 ; usuario:us|button:btn_incrementar|counter[11] ; usuario:us|button:btn_incrementar|counter[12] ; clk          ; clk         ; 0.000        ; 0.541      ; 1.409      ;
+; 0.656 ; usuario:us|button:btn_incrementar|counter[14] ; usuario:us|button:btn_incrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.541      ; 1.409      ;
+; 0.670 ; usuario:us|button:btn_incrementar|counter[10] ; usuario:us|button:btn_incrementar|counter[12] ; clk          ; clk         ; 0.000        ; 0.543      ; 1.425      ;
+; 0.714 ; usuario:us|button:btn_decrementar|pressed_o   ; usuario:us|toggler:tgl_d|q_o                  ; clk          ; clk         ; 0.000        ; 0.081      ; 1.007      ;
+; 0.726 ; usuario:us|button:btn_incrementar|counter[12] ; usuario:us|button:btn_incrementar|counter[12] ; clk          ; clk         ; 0.000        ; 0.099      ; 1.037      ;
+; 0.727 ; usuario:us|button:btn_decrementar|counter[16] ; usuario:us|button:btn_decrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.099      ; 1.038      ;
+; 0.727 ; usuario:us|button:btn_incrementar|counter[16] ; usuario:us|button:btn_incrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.099      ; 1.038      ;
+; 0.728 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[7]  ; clk          ; clk         ; 0.000        ; 0.100      ; 1.040      ;
+; 0.729 ; usuario:us|button:btn_incrementar|counter[17] ; usuario:us|button:btn_incrementar|counter[17] ; clk          ; clk         ; 0.000        ; 0.099      ; 1.040      ;
+; 0.729 ; usuario:us|button:btn_incrementar|counter[18] ; usuario:us|button:btn_incrementar|counter[18] ; clk          ; clk         ; 0.000        ; 0.099      ; 1.040      ;
+; 0.729 ; usuario:us|button:btn_decrementar|counter[18] ; usuario:us|button:btn_decrementar|counter[18] ; clk          ; clk         ; 0.000        ; 0.099      ; 1.040      ;
+; 0.729 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[3]  ; clk          ; clk         ; 0.000        ; 0.100      ; 1.041      ;
+; 0.742 ; usuario:us|button:btn_incrementar|counter[6]  ; usuario:us|button:btn_incrementar|counter[6]  ; clk          ; clk         ; 0.000        ; 0.082      ; 1.036      ;
+; 0.743 ; usuario:us|button:btn_decrementar|counter[8]  ; usuario:us|button:btn_decrementar|counter[8]  ; clk          ; clk         ; 0.000        ; 0.080      ; 1.035      ;
+; 0.743 ; usuario:us|button:btn_decrementar|counter[10] ; usuario:us|button:btn_decrementar|counter[10] ; clk          ; clk         ; 0.000        ; 0.080      ; 1.035      ;
+; 0.743 ; usuario:us|button:btn_decrementar|btn_nr2     ; usuario:us|button:btn_decrementar|btn_deb     ; clk          ; clk         ; 0.000        ; 0.080      ; 1.035      ;
+; 0.744 ; usuario:us|button:btn_decrementar|counter[6]  ; usuario:us|button:btn_decrementar|counter[6]  ; clk          ; clk         ; 0.000        ; 0.080      ; 1.036      ;
+; 0.744 ; usuario:us|button:btn_incrementar|counter[4]  ; usuario:us|button:btn_incrementar|counter[4]  ; clk          ; clk         ; 0.000        ; 0.082      ; 1.038      ;
+; 0.744 ; usuario:us|button:btn_incrementar|counter[14] ; usuario:us|button:btn_incrementar|counter[14] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.037      ;
+; 0.745 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[2]  ; clk          ; clk         ; 0.000        ; 0.082      ; 1.039      ;
+; 0.746 ; usuario:us|button:btn_decrementar|counter[4]  ; usuario:us|button:btn_decrementar|counter[4]  ; clk          ; clk         ; 0.000        ; 0.080      ; 1.038      ;
+; 0.746 ; usuario:us|button:btn_decrementar|counter[20] ; usuario:us|button:btn_decrementar|counter[20] ; clk          ; clk         ; 0.000        ; 0.099      ; 1.057      ;
+; 0.746 ; usuario:us|button:btn_incrementar|counter[13] ; usuario:us|button:btn_incrementar|counter[13] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.039      ;
+; 0.746 ; usuario:us|button:btn_incrementar|counter[20] ; usuario:us|button:btn_incrementar|counter[20] ; clk          ; clk         ; 0.000        ; 0.099      ; 1.057      ;
+; 0.747 ; usuario:us|button:btn_decrementar|counter[2]  ; usuario:us|button:btn_decrementar|counter[2]  ; clk          ; clk         ; 0.000        ; 0.080      ; 1.039      ;
+; 0.747 ; usuario:us|button:btn_decrementar|counter[9]  ; usuario:us|button:btn_decrementar|counter[9]  ; clk          ; clk         ; 0.000        ; 0.080      ; 1.039      ;
+; 0.748 ; usuario:us|button:btn_decrementar|counter[1]  ; usuario:us|button:btn_decrementar|counter[1]  ; clk          ; clk         ; 0.000        ; 0.080      ; 1.040      ;
+; 0.748 ; usuario:us|button:btn_decrementar|counter[5]  ; usuario:us|button:btn_decrementar|counter[5]  ; clk          ; clk         ; 0.000        ; 0.080      ; 1.040      ;
+; 0.748 ; usuario:us|button:btn_decrementar|counter[17] ; usuario:us|button:btn_decrementar|counter[17] ; clk          ; clk         ; 0.000        ; 0.080      ; 1.040      ;
+; 0.749 ; usuario:us|button:btn_decrementar|counter[3]  ; usuario:us|button:btn_decrementar|counter[3]  ; clk          ; clk         ; 0.000        ; 0.080      ; 1.041      ;
+; 0.749 ; usuario:us|button:btn_incrementar|counter[19] ; usuario:us|button:btn_incrementar|counter[19] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.042      ;
+; 0.756 ; usuario:us|button:btn_incrementar|btn_deb     ; usuario:us|button:btn_incrementar|btn_deb_r   ; clk          ; clk         ; 0.000        ; 0.540      ; 1.508      ;
+; 0.759 ; usuario:us|button:btn_incrementar|counter[10] ; usuario:us|button:btn_incrementar|counter[10] ; clk          ; clk         ; 0.000        ; 0.082      ; 1.053      ;
+; 0.762 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[0]  ; clk          ; clk         ; 0.000        ; 0.082      ; 1.056      ;
+; 0.762 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[1]  ; clk          ; clk         ; 0.000        ; 0.082      ; 1.056      ;
+; 0.763 ; usuario:us|button:btn_incrementar|counter[9]  ; usuario:us|button:btn_incrementar|counter[9]  ; clk          ; clk         ; 0.000        ; 0.082      ; 1.057      ;
+; 0.764 ; usuario:us|button:btn_decrementar|counter[0]  ; usuario:us|button:btn_decrementar|counter[0]  ; clk          ; clk         ; 0.000        ; 0.080      ; 1.056      ;
+; 0.764 ; usuario:us|button:btn_incrementar|counter[5]  ; usuario:us|button:btn_incrementar|counter[5]  ; clk          ; clk         ; 0.000        ; 0.082      ; 1.058      ;
+; 0.764 ; usuario:us|button:btn_incrementar|counter[11] ; usuario:us|button:btn_incrementar|counter[11] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.057      ;
+; 0.765 ; usuario:us|button:btn_decrementar|counter[11] ; usuario:us|button:btn_decrementar|counter[11] ; clk          ; clk         ; 0.000        ; 0.080      ; 1.057      ;
+; 0.766 ; usuario:us|button:btn_decrementar|counter[7]  ; usuario:us|button:btn_decrementar|counter[7]  ; clk          ; clk         ; 0.000        ; 0.080      ; 1.058      ;
+; 0.772 ; usuario:us|button:btn_incrementar|counter[19] ; usuario:us|button:btn_incrementar|counter[21] ; clk          ; clk         ; 0.000        ; 0.541      ; 1.525      ;
+; 0.778 ; usuario:us|button:btn_incrementar|counter[13] ; usuario:us|button:btn_incrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.541      ; 1.531      ;
+; 0.786 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[3]  ; clk          ; clk         ; 0.000        ; 0.542      ; 1.540      ;
+; 0.786 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[3]  ; clk          ; clk         ; 0.000        ; 0.542      ; 1.540      ;
+; 0.787 ; usuario:us|button:btn_incrementar|counter[5]  ; usuario:us|button:btn_incrementar|counter[7]  ; clk          ; clk         ; 0.000        ; 0.542      ; 1.541      ;
+; 0.787 ; usuario:us|button:btn_incrementar|counter[14] ; usuario:us|button:btn_incrementar|counter[17] ; clk          ; clk         ; 0.000        ; 0.541      ; 1.540      ;
+; 0.787 ; usuario:us|button:btn_incrementar|counter[4]  ; usuario:us|button:btn_incrementar|counter[7]  ; clk          ; clk         ; 0.000        ; 0.542      ; 1.541      ;
+; 0.790 ; usuario:us|button:btn_decrementar|counter[17] ; usuario:us|button:btn_decrementar|counter[20] ; clk          ; clk         ; 0.000        ; 0.531      ; 1.533      ;
+; 0.794 ; usuario:us|button:btn_incrementar|counter[9]  ; usuario:us|button:btn_incrementar|counter[12] ; clk          ; clk         ; 0.000        ; 0.543      ; 1.549      ;
+; 0.796 ; usuario:us|button:btn_incrementar|counter[14] ; usuario:us|button:btn_incrementar|counter[18] ; clk          ; clk         ; 0.000        ; 0.541      ; 1.549      ;
+; 0.857 ; usuario:us|button:btn_incrementar|counter[15] ; usuario:us|button:btn_incrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.541      ; 1.610      ;
+; 0.863 ; usuario:us|button:btn_decrementar|counter[15] ; usuario:us|button:btn_decrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.531      ; 1.606      ;
+; 0.869 ; usuario:us|button:btn_decrementar|counter[19] ; usuario:us|button:btn_decrementar|counter[20] ; clk          ; clk         ; 0.000        ; 0.531      ; 1.612      ;
+; 0.892 ; usuario:us|button:btn_decrementar|counter[14] ; usuario:us|button:btn_decrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.531      ; 1.635      ;
+; 0.909 ; usuario:us|button:btn_incrementar|counter[13] ; usuario:us|button:btn_incrementar|counter[17] ; clk          ; clk         ; 0.000        ; 0.541      ; 1.662      ;
+; 0.918 ; usuario:us|button:btn_incrementar|counter[13] ; usuario:us|button:btn_incrementar|counter[18] ; clk          ; clk         ; 0.000        ; 0.541      ; 1.671      ;
+; 0.921 ; usuario:us|button:btn_decrementar|counter[17] ; usuario:us|button:btn_decrementar|counter[21] ; clk          ; clk         ; 0.000        ; 0.531      ; 1.664      ;
+; 0.928 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[7]  ; clk          ; clk         ; 0.000        ; 0.542      ; 1.682      ;
+; 0.933 ; usuario:us|button:btn_incrementar|counter[6]  ; usuario:us|button:btn_incrementar|counter[12] ; clk          ; clk         ; 0.000        ; 0.543      ; 1.688      ;
+; 0.936 ; usuario:us|button:btn_incrementar|counter[14] ; usuario:us|button:btn_incrementar|counter[20] ; clk          ; clk         ; 0.000        ; 0.541      ; 1.689      ;
+; 0.936 ; usuario:us|button:btn_incrementar|counter[11] ; usuario:us|button:btn_incrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.541      ; 1.689      ;
+; 0.943 ; usuario:us|button:btn_incrementar|counter[15] ; usuario:us|button:btn_incrementar|counter[17] ; clk          ; clk         ; 0.000        ; 0.541      ; 1.696      ;
+; 0.945 ; usuario:us|button:btn_decrementar|counter[10] ; usuario:us|button:btn_decrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.530      ; 1.687      ;
+; 0.946 ; usuario:us|button:btn_decrementar|counter[19] ; usuario:us|button:btn_decrementar|counter[21] ; clk          ; clk         ; 0.000        ; 0.531      ; 1.689      ;
+; 0.946 ; usuario:us|button:btn_decrementar|counter[11] ; usuario:us|button:btn_decrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.531      ; 1.689      ;
+; 0.950 ; usuario:us|button:btn_incrementar|counter[10] ; usuario:us|button:btn_incrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.543      ; 1.705      ;
+; 0.961 ; usuario:us|button:btn_decrementar|counter[15] ; usuario:us|button:btn_decrementar|counter[15] ; clk          ; clk         ; 0.000        ; 0.080      ; 1.253      ;
+; 0.963 ; usuario:us|button:btn_decrementar|counter[13] ; usuario:us|button:btn_decrementar|counter[13] ; clk          ; clk         ; 0.000        ; 0.080      ; 1.255      ;
+; 0.964 ; usuario:us|button:btn_incrementar|counter[15] ; usuario:us|button:btn_incrementar|counter[15] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.257      ;
+; 0.967 ; usuario:us|button:btn_decrementar|counter[19] ; usuario:us|button:btn_decrementar|counter[19] ; clk          ; clk         ; 0.000        ; 0.080      ; 1.259      ;
+; 0.971 ; usuario:us|button:btn_decrementar|counter[14] ; usuario:us|button:btn_decrementar|counter[14] ; clk          ; clk         ; 0.000        ; 0.080      ; 1.263      ;
+; 0.972 ; usuario:us|button:btn_decrementar|counter[12] ; usuario:us|button:btn_decrementar|counter[12] ; clk          ; clk         ; 0.000        ; 0.080      ; 1.264      ;
+; 0.987 ; usuario:us|toggler:tgl_d|q_o                  ; usuario:us|data_i                             ; clk          ; clk         ; 0.000        ; 0.080      ; 1.279      ;
+; 0.997 ; usuario:us|button:btn_incrementar|counter[15] ; usuario:us|button:btn_incrementar|counter[18] ; clk          ; clk         ; 0.000        ; 0.541      ; 1.750      ;
+; 1.003 ; usuario:us|button:btn_decrementar|counter[15] ; usuario:us|button:btn_decrementar|counter[18] ; clk          ; clk         ; 0.000        ; 0.531      ; 1.746      ;
+; 1.004 ; usuario:us|button:btn_decrementar|counter[13] ; usuario:us|button:btn_decrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.531      ; 1.747      ;
+; 1.032 ; usuario:us|button:btn_decrementar|counter[14] ; usuario:us|button:btn_decrementar|counter[18] ; clk          ; clk         ; 0.000        ; 0.531      ; 1.775      ;
+; 1.033 ; usuario:us|button:btn_decrementar|counter[12] ; usuario:us|button:btn_decrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.531      ; 1.776      ;
+; 1.058 ; usuario:us|button:btn_incrementar|counter[13] ; usuario:us|button:btn_incrementar|counter[20] ; clk          ; clk         ; 0.000        ; 0.541      ; 1.811      ;
+; 1.065 ; usuario:us|button:btn_incrementar|btn_deb_r   ; usuario:us|button:btn_incrementar|pressed_o   ; clk          ; clk         ; 0.000        ; -0.360     ; 0.917      ;
+; 1.066 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[7]  ; clk          ; clk         ; 0.000        ; 0.542      ; 1.820      ;
+; 1.066 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[7]  ; clk          ; clk         ; 0.000        ; 0.542      ; 1.820      ;
+; 1.067 ; usuario:us|button:btn_incrementar|btn_nr      ; usuario:us|button:btn_incrementar|btn_nr2     ; clk          ; clk         ; 0.000        ; 0.140      ; 1.419      ;
+; 1.067 ; usuario:us|button:btn_incrementar|counter[14] ; usuario:us|button:btn_incrementar|counter[21] ; clk          ; clk         ; 0.000        ; 0.541      ; 1.820      ;
+; 1.067 ; usuario:us|button:btn_incrementar|counter[11] ; usuario:us|button:btn_incrementar|counter[17] ; clk          ; clk         ; 0.000        ; 0.541      ; 1.820      ;
+; 1.069 ; usuario:us|button:btn_decrementar|counter[9]  ; usuario:us|button:btn_decrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.530      ; 1.811      ;
++-------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
+-----------------------------------------------
+; Slow 1200mV 85C Model Metastability Summary ;
+-----------------------------------------------
+Design MTBF is not calculated because the design doesn't meet its timing requirements.
+
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 228.73 MHz ; 228.73 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------+
+; Slow 1200mV 0C Model Setup Summary ;
++-------+--------+-------------------+
+; Clock ; Slack  ; End Point TNS     ;
++-------+--------+-------------------+
+; clk   ; -3.372 ; -148.631          ;
++-------+--------+-------------------+
+
+
++-----------------------------------+
+; Slow 1200mV 0C Model Hold Summary ;
++-------+-------+-------------------+
+; Clock ; Slack ; End Point TNS     ;
++-------+-------+-------------------+
+; clk   ; 0.401 ; 0.000             ;
++-------+-------+-------------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++-------+--------+---------------------------------+
+; Clock ; Slack  ; End Point TNS                   ;
++-------+--------+---------------------------------+
+; clk   ; -3.000 ; -93.707                         ;
++-------+--------+---------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'clk'                                                                                                                                            ;
++--------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                     ; To Node                                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -3.372 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[9]  ; clk          ; clk         ; 1.000        ; -0.502     ; 3.872      ;
+; -3.372 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[10] ; clk          ; clk         ; 1.000        ; -0.502     ; 3.872      ;
+; -3.370 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[6]  ; clk          ; clk         ; 1.000        ; -0.502     ; 3.870      ;
+; -3.369 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[4]  ; clk          ; clk         ; 1.000        ; -0.502     ; 3.869      ;
+; -3.369 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[5]  ; clk          ; clk         ; 1.000        ; -0.502     ; 3.869      ;
+; -3.367 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[2]  ; clk          ; clk         ; 1.000        ; -0.502     ; 3.867      ;
+; -3.366 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[0]  ; clk          ; clk         ; 1.000        ; -0.502     ; 3.866      ;
+; -3.366 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[1]  ; clk          ; clk         ; 1.000        ; -0.502     ; 3.866      ;
+; -3.363 ; usuario:us|button:btn_decrementar|counter[14] ; usuario:us|button:btn_decrementar|counter[11] ; clk          ; clk         ; 1.000        ; -0.072     ; 4.293      ;
+; -3.362 ; usuario:us|button:btn_decrementar|counter[14] ; usuario:us|button:btn_decrementar|counter[12] ; clk          ; clk         ; 1.000        ; -0.072     ; 4.292      ;
+; -3.360 ; usuario:us|button:btn_decrementar|counter[14] ; usuario:us|button:btn_decrementar|counter[13] ; clk          ; clk         ; 1.000        ; -0.072     ; 4.290      ;
+; -3.359 ; usuario:us|button:btn_decrementar|counter[14] ; usuario:us|button:btn_decrementar|counter[14] ; clk          ; clk         ; 1.000        ; -0.072     ; 4.289      ;
+; -3.358 ; usuario:us|button:btn_decrementar|counter[14] ; usuario:us|button:btn_decrementar|counter[15] ; clk          ; clk         ; 1.000        ; -0.072     ; 4.288      ;
+; -3.358 ; usuario:us|button:btn_decrementar|counter[13] ; usuario:us|button:btn_decrementar|counter[11] ; clk          ; clk         ; 1.000        ; -0.072     ; 4.288      ;
+; -3.357 ; usuario:us|button:btn_decrementar|counter[13] ; usuario:us|button:btn_decrementar|counter[12] ; clk          ; clk         ; 1.000        ; -0.072     ; 4.287      ;
+; -3.355 ; usuario:us|button:btn_decrementar|counter[14] ; usuario:us|button:btn_decrementar|counter[17] ; clk          ; clk         ; 1.000        ; -0.072     ; 4.285      ;
+; -3.355 ; usuario:us|button:btn_decrementar|counter[13] ; usuario:us|button:btn_decrementar|counter[13] ; clk          ; clk         ; 1.000        ; -0.072     ; 4.285      ;
+; -3.354 ; usuario:us|button:btn_decrementar|counter[13] ; usuario:us|button:btn_decrementar|counter[14] ; clk          ; clk         ; 1.000        ; -0.072     ; 4.284      ;
+; -3.353 ; usuario:us|button:btn_decrementar|counter[13] ; usuario:us|button:btn_decrementar|counter[15] ; clk          ; clk         ; 1.000        ; -0.072     ; 4.283      ;
+; -3.351 ; usuario:us|button:btn_decrementar|counter[14] ; usuario:us|button:btn_decrementar|counter[19] ; clk          ; clk         ; 1.000        ; -0.072     ; 4.281      ;
+; -3.350 ; usuario:us|button:btn_decrementar|counter[13] ; usuario:us|button:btn_decrementar|counter[17] ; clk          ; clk         ; 1.000        ; -0.072     ; 4.280      ;
+; -3.346 ; usuario:us|button:btn_decrementar|counter[13] ; usuario:us|button:btn_decrementar|counter[19] ; clk          ; clk         ; 1.000        ; -0.072     ; 4.276      ;
+; -3.320 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[10] ; clk          ; clk         ; 1.000        ; -0.074     ; 4.248      ;
+; -3.319 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[9]  ; clk          ; clk         ; 1.000        ; -0.074     ; 4.247      ;
+; -3.318 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[6]  ; clk          ; clk         ; 1.000        ; -0.074     ; 4.246      ;
+; -3.317 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[5]  ; clk          ; clk         ; 1.000        ; -0.074     ; 4.245      ;
+; -3.316 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[4]  ; clk          ; clk         ; 1.000        ; -0.074     ; 4.244      ;
+; -3.316 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[8]  ; clk          ; clk         ; 1.000        ; -0.501     ; 3.817      ;
+; -3.315 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[2]  ; clk          ; clk         ; 1.000        ; -0.074     ; 4.243      ;
+; -3.314 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[1]  ; clk          ; clk         ; 1.000        ; -0.074     ; 4.242      ;
+; -3.314 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[19] ; clk          ; clk         ; 1.000        ; -0.501     ; 3.815      ;
+; -3.313 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[0]  ; clk          ; clk         ; 1.000        ; -0.074     ; 4.241      ;
+; -3.310 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[15] ; clk          ; clk         ; 1.000        ; -0.501     ; 3.811      ;
+; -3.310 ; usuario:us|button:btn_decrementar|counter[18] ; usuario:us|button:btn_decrementar|counter[11] ; clk          ; clk         ; 1.000        ; -0.490     ; 3.822      ;
+; -3.309 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[14] ; clk          ; clk         ; 1.000        ; -0.501     ; 3.810      ;
+; -3.309 ; usuario:us|button:btn_decrementar|counter[18] ; usuario:us|button:btn_decrementar|counter[12] ; clk          ; clk         ; 1.000        ; -0.490     ; 3.821      ;
+; -3.308 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[13] ; clk          ; clk         ; 1.000        ; -0.501     ; 3.809      ;
+; -3.307 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[11] ; clk          ; clk         ; 1.000        ; -0.501     ; 3.808      ;
+; -3.307 ; usuario:us|button:btn_decrementar|counter[18] ; usuario:us|button:btn_decrementar|counter[13] ; clk          ; clk         ; 1.000        ; -0.490     ; 3.819      ;
+; -3.306 ; usuario:us|button:btn_decrementar|counter[18] ; usuario:us|button:btn_decrementar|counter[14] ; clk          ; clk         ; 1.000        ; -0.490     ; 3.818      ;
+; -3.305 ; usuario:us|button:btn_decrementar|counter[18] ; usuario:us|button:btn_decrementar|counter[15] ; clk          ; clk         ; 1.000        ; -0.490     ; 3.817      ;
+; -3.302 ; usuario:us|button:btn_decrementar|counter[18] ; usuario:us|button:btn_decrementar|counter[17] ; clk          ; clk         ; 1.000        ; -0.490     ; 3.814      ;
+; -3.298 ; usuario:us|button:btn_decrementar|counter[18] ; usuario:us|button:btn_decrementar|counter[19] ; clk          ; clk         ; 1.000        ; -0.490     ; 3.810      ;
+; -3.254 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[8]  ; clk          ; clk         ; 1.000        ; -0.073     ; 4.183      ;
+; -3.252 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[19] ; clk          ; clk         ; 1.000        ; -0.073     ; 4.181      ;
+; -3.248 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[15] ; clk          ; clk         ; 1.000        ; -0.073     ; 4.177      ;
+; -3.247 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[13] ; clk          ; clk         ; 1.000        ; -0.073     ; 4.176      ;
+; -3.247 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[14] ; clk          ; clk         ; 1.000        ; -0.073     ; 4.176      ;
+; -3.245 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[11] ; clk          ; clk         ; 1.000        ; -0.073     ; 4.174      ;
+; -3.244 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[9]  ; clk          ; clk         ; 1.000        ; -0.073     ; 4.173      ;
+; -3.244 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[10] ; clk          ; clk         ; 1.000        ; -0.073     ; 4.173      ;
+; -3.242 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[6]  ; clk          ; clk         ; 1.000        ; -0.073     ; 4.171      ;
+; -3.241 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[4]  ; clk          ; clk         ; 1.000        ; -0.073     ; 4.170      ;
+; -3.241 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[5]  ; clk          ; clk         ; 1.000        ; -0.073     ; 4.170      ;
+; -3.239 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[2]  ; clk          ; clk         ; 1.000        ; -0.073     ; 4.168      ;
+; -3.238 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[0]  ; clk          ; clk         ; 1.000        ; -0.073     ; 4.167      ;
+; -3.238 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[1]  ; clk          ; clk         ; 1.000        ; -0.073     ; 4.167      ;
+; -3.237 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[9]  ; clk          ; clk         ; 1.000        ; -0.073     ; 4.166      ;
+; -3.237 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[10] ; clk          ; clk         ; 1.000        ; -0.073     ; 4.166      ;
+; -3.236 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[9]  ; clk          ; clk         ; 1.000        ; -0.502     ; 3.736      ;
+; -3.236 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[10] ; clk          ; clk         ; 1.000        ; -0.502     ; 3.736      ;
+; -3.235 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[6]  ; clk          ; clk         ; 1.000        ; -0.073     ; 4.164      ;
+; -3.234 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[6]  ; clk          ; clk         ; 1.000        ; -0.502     ; 3.734      ;
+; -3.234 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[4]  ; clk          ; clk         ; 1.000        ; -0.073     ; 4.163      ;
+; -3.234 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[5]  ; clk          ; clk         ; 1.000        ; -0.073     ; 4.163      ;
+; -3.233 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[4]  ; clk          ; clk         ; 1.000        ; -0.502     ; 3.733      ;
+; -3.233 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[5]  ; clk          ; clk         ; 1.000        ; -0.502     ; 3.733      ;
+; -3.232 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[2]  ; clk          ; clk         ; 1.000        ; -0.073     ; 4.161      ;
+; -3.231 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[2]  ; clk          ; clk         ; 1.000        ; -0.502     ; 3.731      ;
+; -3.231 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[0]  ; clk          ; clk         ; 1.000        ; -0.073     ; 4.160      ;
+; -3.231 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[1]  ; clk          ; clk         ; 1.000        ; -0.073     ; 4.160      ;
+; -3.230 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[0]  ; clk          ; clk         ; 1.000        ; -0.502     ; 3.730      ;
+; -3.230 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[1]  ; clk          ; clk         ; 1.000        ; -0.502     ; 3.730      ;
+; -3.221 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[9]  ; clk          ; clk         ; 1.000        ; -0.073     ; 4.150      ;
+; -3.221 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[10] ; clk          ; clk         ; 1.000        ; -0.073     ; 4.150      ;
+; -3.219 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[6]  ; clk          ; clk         ; 1.000        ; -0.073     ; 4.148      ;
+; -3.218 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[4]  ; clk          ; clk         ; 1.000        ; -0.073     ; 4.147      ;
+; -3.218 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[5]  ; clk          ; clk         ; 1.000        ; -0.073     ; 4.147      ;
+; -3.216 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[2]  ; clk          ; clk         ; 1.000        ; -0.073     ; 4.145      ;
+; -3.215 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[0]  ; clk          ; clk         ; 1.000        ; -0.073     ; 4.144      ;
+; -3.215 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[1]  ; clk          ; clk         ; 1.000        ; -0.073     ; 4.144      ;
+; -3.188 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[8]  ; clk          ; clk         ; 1.000        ; -0.072     ; 4.118      ;
+; -3.187 ; usuario:us|button:btn_decrementar|counter[15] ; usuario:us|button:btn_decrementar|counter[11] ; clk          ; clk         ; 1.000        ; -0.072     ; 4.117      ;
+; -3.187 ; usuario:us|button:btn_decrementar|counter[16] ; usuario:us|button:btn_decrementar|counter[11] ; clk          ; clk         ; 1.000        ; -0.490     ; 3.699      ;
+; -3.186 ; usuario:us|button:btn_decrementar|counter[15] ; usuario:us|button:btn_decrementar|counter[12] ; clk          ; clk         ; 1.000        ; -0.072     ; 4.116      ;
+; -3.186 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[19] ; clk          ; clk         ; 1.000        ; -0.072     ; 4.116      ;
+; -3.186 ; usuario:us|button:btn_decrementar|counter[16] ; usuario:us|button:btn_decrementar|counter[12] ; clk          ; clk         ; 1.000        ; -0.490     ; 3.698      ;
+; -3.184 ; usuario:us|button:btn_decrementar|counter[15] ; usuario:us|button:btn_decrementar|counter[13] ; clk          ; clk         ; 1.000        ; -0.072     ; 4.114      ;
+; -3.184 ; usuario:us|button:btn_decrementar|counter[16] ; usuario:us|button:btn_decrementar|counter[13] ; clk          ; clk         ; 1.000        ; -0.490     ; 3.696      ;
+; -3.183 ; usuario:us|button:btn_decrementar|counter[15] ; usuario:us|button:btn_decrementar|counter[14] ; clk          ; clk         ; 1.000        ; -0.072     ; 4.113      ;
+; -3.183 ; usuario:us|button:btn_decrementar|counter[16] ; usuario:us|button:btn_decrementar|counter[14] ; clk          ; clk         ; 1.000        ; -0.490     ; 3.695      ;
+; -3.182 ; usuario:us|button:btn_decrementar|counter[15] ; usuario:us|button:btn_decrementar|counter[15] ; clk          ; clk         ; 1.000        ; -0.072     ; 4.112      ;
+; -3.182 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[15] ; clk          ; clk         ; 1.000        ; -0.072     ; 4.112      ;
+; -3.182 ; usuario:us|button:btn_decrementar|counter[16] ; usuario:us|button:btn_decrementar|counter[15] ; clk          ; clk         ; 1.000        ; -0.490     ; 3.694      ;
+; -3.181 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[8]  ; clk          ; clk         ; 1.000        ; -0.072     ; 4.111      ;
+; -3.181 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[14] ; clk          ; clk         ; 1.000        ; -0.072     ; 4.111      ;
+; -3.180 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[8]  ; clk          ; clk         ; 1.000        ; -0.501     ; 3.681      ;
+; -3.180 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[13] ; clk          ; clk         ; 1.000        ; -0.072     ; 4.110      ;
+; -3.179 ; usuario:us|button:btn_decrementar|counter[15] ; usuario:us|button:btn_decrementar|counter[17] ; clk          ; clk         ; 1.000        ; -0.072     ; 4.109      ;
+; -3.179 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[19] ; clk          ; clk         ; 1.000        ; -0.072     ; 4.109      ;
++--------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'clk'                                                                                                                                            ;
++-------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                     ; To Node                                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.401 ; usuario:us|toggler:tgl_i|q_o                  ; usuario:us|toggler:tgl_i|q_o                  ; clk          ; clk         ; 0.000        ; 0.073      ; 0.669      ;
+; 0.401 ; usuario:us|button:btn_incrementar|btn_deb     ; usuario:us|button:btn_incrementar|btn_deb     ; clk          ; clk         ; 0.000        ; 0.073      ; 0.669      ;
+; 0.402 ; usuario:us|data_i                             ; usuario:us|data_i                             ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
+; 0.402 ; usuario:us|toggler:tgl_d|q_o                  ; usuario:us|toggler:tgl_d|q_o                  ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
+; 0.402 ; usuario:us|button:btn_decrementar|btn_deb     ; usuario:us|button:btn_decrementar|btn_deb     ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
+; 0.447 ; usuario:us|button:btn_incrementar|pressed_o   ; usuario:us|toggler:tgl_i|q_o                  ; clk          ; clk         ; 0.000        ; 0.073      ; 0.715      ;
+; 0.452 ; usuario:us|button:btn_incrementar|counter[21] ; usuario:us|button:btn_incrementar|counter[21] ; clk          ; clk         ; 0.000        ; 0.090      ; 0.737      ;
+; 0.453 ; usuario:us|button:btn_decrementar|counter[21] ; usuario:us|button:btn_decrementar|counter[21] ; clk          ; clk         ; 0.000        ; 0.089      ; 0.737      ;
+; 0.582 ; usuario:us|button:btn_decrementar|btn_deb_r   ; usuario:us|button:btn_decrementar|pressed_o   ; clk          ; clk         ; 0.000        ; 0.072      ; 0.849      ;
+; 0.583 ; usuario:us|button:btn_incrementar|counter[6]  ; usuario:us|button:btn_incrementar|counter[7]  ; clk          ; clk         ; 0.000        ; 0.502      ; 1.280      ;
+; 0.588 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[3]  ; clk          ; clk         ; 0.000        ; 0.502      ; 1.285      ;
+; 0.591 ; usuario:us|button:btn_incrementar|counter[19] ; usuario:us|button:btn_incrementar|counter[20] ; clk          ; clk         ; 0.000        ; 0.502      ; 1.288      ;
+; 0.598 ; usuario:us|button:btn_decrementar|counter[17] ; usuario:us|button:btn_decrementar|counter[18] ; clk          ; clk         ; 0.000        ; 0.490      ; 1.283      ;
+; 0.599 ; usuario:us|button:btn_incrementar|counter[14] ; usuario:us|button:btn_incrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.502      ; 1.296      ;
+; 0.602 ; usuario:us|button:btn_incrementar|counter[11] ; usuario:us|button:btn_incrementar|counter[12] ; clk          ; clk         ; 0.000        ; 0.502      ; 1.299      ;
+; 0.610 ; usuario:us|button:btn_incrementar|counter[10] ; usuario:us|button:btn_incrementar|counter[12] ; clk          ; clk         ; 0.000        ; 0.503      ; 1.308      ;
+; 0.631 ; usuario:us|button:btn_decrementar|pressed_o   ; usuario:us|toggler:tgl_d|q_o                  ; clk          ; clk         ; 0.000        ; 0.073      ; 0.899      ;
+; 0.660 ; usuario:us|button:btn_incrementar|btn_deb     ; usuario:us|button:btn_incrementar|btn_deb_r   ; clk          ; clk         ; 0.000        ; 0.500      ; 1.355      ;
+; 0.674 ; usuario:us|button:btn_incrementar|counter[12] ; usuario:us|button:btn_incrementar|counter[12] ; clk          ; clk         ; 0.000        ; 0.090      ; 0.959      ;
+; 0.675 ; usuario:us|button:btn_decrementar|counter[16] ; usuario:us|button:btn_decrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.089      ; 0.959      ;
+; 0.676 ; usuario:us|button:btn_incrementar|counter[17] ; usuario:us|button:btn_incrementar|counter[17] ; clk          ; clk         ; 0.000        ; 0.090      ; 0.961      ;
+; 0.676 ; usuario:us|button:btn_incrementar|counter[16] ; usuario:us|button:btn_incrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.090      ; 0.961      ;
+; 0.678 ; usuario:us|button:btn_incrementar|counter[18] ; usuario:us|button:btn_incrementar|counter[18] ; clk          ; clk         ; 0.000        ; 0.090      ; 0.963      ;
+; 0.678 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[7]  ; clk          ; clk         ; 0.000        ; 0.090      ; 0.963      ;
+; 0.679 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[3]  ; clk          ; clk         ; 0.000        ; 0.090      ; 0.964      ;
+; 0.680 ; usuario:us|button:btn_decrementar|counter[18] ; usuario:us|button:btn_decrementar|counter[18] ; clk          ; clk         ; 0.000        ; 0.089      ; 0.964      ;
+; 0.688 ; usuario:us|button:btn_incrementar|counter[19] ; usuario:us|button:btn_incrementar|counter[21] ; clk          ; clk         ; 0.000        ; 0.502      ; 1.385      ;
+; 0.691 ; usuario:us|button:btn_decrementar|counter[8]  ; usuario:us|button:btn_decrementar|counter[8]  ; clk          ; clk         ; 0.000        ; 0.072      ; 0.958      ;
+; 0.691 ; usuario:us|button:btn_decrementar|counter[10] ; usuario:us|button:btn_decrementar|counter[10] ; clk          ; clk         ; 0.000        ; 0.072      ; 0.958      ;
+; 0.691 ; usuario:us|button:btn_incrementar|counter[6]  ; usuario:us|button:btn_incrementar|counter[6]  ; clk          ; clk         ; 0.000        ; 0.073      ; 0.959      ;
+; 0.691 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[3]  ; clk          ; clk         ; 0.000        ; 0.502      ; 1.388      ;
+; 0.692 ; usuario:us|button:btn_decrementar|counter[6]  ; usuario:us|button:btn_decrementar|counter[6]  ; clk          ; clk         ; 0.000        ; 0.072      ; 0.959      ;
+; 0.692 ; usuario:us|button:btn_incrementar|counter[14] ; usuario:us|button:btn_incrementar|counter[14] ; clk          ; clk         ; 0.000        ; 0.073      ; 0.960      ;
+; 0.692 ; usuario:us|button:btn_decrementar|btn_nr2     ; usuario:us|button:btn_decrementar|btn_deb     ; clk          ; clk         ; 0.000        ; 0.072      ; 0.959      ;
+; 0.692 ; usuario:us|button:btn_incrementar|counter[20] ; usuario:us|button:btn_incrementar|counter[20] ; clk          ; clk         ; 0.000        ; 0.090      ; 0.977      ;
+; 0.693 ; usuario:us|button:btn_decrementar|counter[20] ; usuario:us|button:btn_decrementar|counter[20] ; clk          ; clk         ; 0.000        ; 0.089      ; 0.977      ;
+; 0.694 ; usuario:us|button:btn_decrementar|counter[1]  ; usuario:us|button:btn_decrementar|counter[1]  ; clk          ; clk         ; 0.000        ; 0.072      ; 0.961      ;
+; 0.694 ; usuario:us|button:btn_incrementar|counter[4]  ; usuario:us|button:btn_incrementar|counter[4]  ; clk          ; clk         ; 0.000        ; 0.073      ; 0.962      ;
+; 0.695 ; usuario:us|button:btn_decrementar|counter[4]  ; usuario:us|button:btn_decrementar|counter[4]  ; clk          ; clk         ; 0.000        ; 0.072      ; 0.962      ;
+; 0.695 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[2]  ; clk          ; clk         ; 0.000        ; 0.073      ; 0.963      ;
+; 0.696 ; usuario:us|button:btn_decrementar|counter[2]  ; usuario:us|button:btn_decrementar|counter[2]  ; clk          ; clk         ; 0.000        ; 0.072      ; 0.963      ;
+; 0.696 ; usuario:us|button:btn_decrementar|counter[9]  ; usuario:us|button:btn_decrementar|counter[9]  ; clk          ; clk         ; 0.000        ; 0.072      ; 0.963      ;
+; 0.696 ; usuario:us|button:btn_decrementar|counter[17] ; usuario:us|button:btn_decrementar|counter[17] ; clk          ; clk         ; 0.000        ; 0.072      ; 0.963      ;
+; 0.696 ; usuario:us|button:btn_incrementar|counter[13] ; usuario:us|button:btn_incrementar|counter[13] ; clk          ; clk         ; 0.000        ; 0.073      ; 0.964      ;
+; 0.697 ; usuario:us|button:btn_decrementar|counter[5]  ; usuario:us|button:btn_decrementar|counter[5]  ; clk          ; clk         ; 0.000        ; 0.072      ; 0.964      ;
+; 0.697 ; usuario:us|button:btn_incrementar|counter[5]  ; usuario:us|button:btn_incrementar|counter[7]  ; clk          ; clk         ; 0.000        ; 0.502      ; 1.394      ;
+; 0.699 ; usuario:us|button:btn_decrementar|counter[3]  ; usuario:us|button:btn_decrementar|counter[3]  ; clk          ; clk         ; 0.000        ; 0.072      ; 0.966      ;
+; 0.699 ; usuario:us|button:btn_incrementar|counter[19] ; usuario:us|button:btn_incrementar|counter[19] ; clk          ; clk         ; 0.000        ; 0.073      ; 0.967      ;
+; 0.704 ; usuario:us|button:btn_incrementar|counter[10] ; usuario:us|button:btn_incrementar|counter[10] ; clk          ; clk         ; 0.000        ; 0.073      ; 0.972      ;
+; 0.706 ; usuario:us|button:btn_incrementar|counter[14] ; usuario:us|button:btn_incrementar|counter[17] ; clk          ; clk         ; 0.000        ; 0.502      ; 1.403      ;
+; 0.707 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[1]  ; clk          ; clk         ; 0.000        ; 0.073      ; 0.975      ;
+; 0.707 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[3]  ; clk          ; clk         ; 0.000        ; 0.502      ; 1.404      ;
+; 0.709 ; usuario:us|button:btn_incrementar|counter[4]  ; usuario:us|button:btn_incrementar|counter[7]  ; clk          ; clk         ; 0.000        ; 0.502      ; 1.406      ;
+; 0.710 ; usuario:us|button:btn_incrementar|counter[9]  ; usuario:us|button:btn_incrementar|counter[9]  ; clk          ; clk         ; 0.000        ; 0.073      ; 0.978      ;
+; 0.710 ; usuario:us|button:btn_incrementar|counter[11] ; usuario:us|button:btn_incrementar|counter[11] ; clk          ; clk         ; 0.000        ; 0.073      ; 0.978      ;
+; 0.710 ; usuario:us|button:btn_incrementar|counter[13] ; usuario:us|button:btn_incrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.502      ; 1.407      ;
+; 0.711 ; usuario:us|button:btn_decrementar|counter[7]  ; usuario:us|button:btn_decrementar|counter[7]  ; clk          ; clk         ; 0.000        ; 0.072      ; 0.978      ;
+; 0.711 ; usuario:us|button:btn_decrementar|counter[11] ; usuario:us|button:btn_decrementar|counter[11] ; clk          ; clk         ; 0.000        ; 0.072      ; 0.978      ;
+; 0.711 ; usuario:us|button:btn_incrementar|counter[5]  ; usuario:us|button:btn_incrementar|counter[5]  ; clk          ; clk         ; 0.000        ; 0.073      ; 0.979      ;
+; 0.716 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[0]  ; clk          ; clk         ; 0.000        ; 0.073      ; 0.984      ;
+; 0.717 ; usuario:us|button:btn_decrementar|counter[0]  ; usuario:us|button:btn_decrementar|counter[0]  ; clk          ; clk         ; 0.000        ; 0.072      ; 0.984      ;
+; 0.720 ; usuario:us|button:btn_decrementar|counter[17] ; usuario:us|button:btn_decrementar|counter[20] ; clk          ; clk         ; 0.000        ; 0.490      ; 1.405      ;
+; 0.721 ; usuario:us|button:btn_incrementar|counter[14] ; usuario:us|button:btn_incrementar|counter[18] ; clk          ; clk         ; 0.000        ; 0.502      ; 1.418      ;
+; 0.723 ; usuario:us|button:btn_incrementar|counter[9]  ; usuario:us|button:btn_incrementar|counter[12] ; clk          ; clk         ; 0.000        ; 0.503      ; 1.421      ;
+; 0.799 ; usuario:us|button:btn_incrementar|counter[15] ; usuario:us|button:btn_incrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.502      ; 1.496      ;
+; 0.807 ; usuario:us|button:btn_incrementar|counter[13] ; usuario:us|button:btn_incrementar|counter[17] ; clk          ; clk         ; 0.000        ; 0.502      ; 1.504      ;
+; 0.812 ; usuario:us|button:btn_decrementar|counter[15] ; usuario:us|button:btn_decrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.490      ; 1.497      ;
+; 0.816 ; usuario:us|button:btn_decrementar|counter[19] ; usuario:us|button:btn_decrementar|counter[20] ; clk          ; clk         ; 0.000        ; 0.490      ; 1.501      ;
+; 0.817 ; usuario:us|button:btn_decrementar|counter[17] ; usuario:us|button:btn_decrementar|counter[21] ; clk          ; clk         ; 0.000        ; 0.490      ; 1.502      ;
+; 0.828 ; usuario:us|button:btn_incrementar|counter[15] ; usuario:us|button:btn_incrementar|counter[17] ; clk          ; clk         ; 0.000        ; 0.502      ; 1.525      ;
+; 0.832 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[7]  ; clk          ; clk         ; 0.000        ; 0.502      ; 1.529      ;
+; 0.832 ; usuario:us|button:btn_incrementar|counter[13] ; usuario:us|button:btn_incrementar|counter[18] ; clk          ; clk         ; 0.000        ; 0.502      ; 1.529      ;
+; 0.833 ; usuario:us|button:btn_decrementar|counter[19] ; usuario:us|button:btn_decrementar|counter[21] ; clk          ; clk         ; 0.000        ; 0.490      ; 1.518      ;
+; 0.837 ; usuario:us|button:btn_decrementar|counter[14] ; usuario:us|button:btn_decrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.490      ; 1.522      ;
+; 0.841 ; usuario:us|button:btn_incrementar|counter[6]  ; usuario:us|button:btn_incrementar|counter[12] ; clk          ; clk         ; 0.000        ; 0.503      ; 1.539      ;
+; 0.843 ; usuario:us|button:btn_incrementar|counter[14] ; usuario:us|button:btn_incrementar|counter[20] ; clk          ; clk         ; 0.000        ; 0.502      ; 1.540      ;
+; 0.846 ; usuario:us|button:btn_incrementar|counter[11] ; usuario:us|button:btn_incrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.502      ; 1.543      ;
+; 0.854 ; usuario:us|button:btn_decrementar|counter[10] ; usuario:us|button:btn_decrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.489      ; 1.538      ;
+; 0.854 ; usuario:us|button:btn_incrementar|counter[10] ; usuario:us|button:btn_incrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.503      ; 1.552      ;
+; 0.858 ; usuario:us|button:btn_decrementar|counter[11] ; usuario:us|button:btn_decrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.490      ; 1.543      ;
+; 0.863 ; usuario:us|button:btn_decrementar|counter[13] ; usuario:us|button:btn_decrementar|counter[13] ; clk          ; clk         ; 0.000        ; 0.072      ; 1.130      ;
+; 0.869 ; usuario:us|button:btn_decrementar|counter[19] ; usuario:us|button:btn_decrementar|counter[19] ; clk          ; clk         ; 0.000        ; 0.072      ; 1.136      ;
+; 0.870 ; usuario:us|button:btn_decrementar|counter[15] ; usuario:us|button:btn_decrementar|counter[15] ; clk          ; clk         ; 0.000        ; 0.072      ; 1.137      ;
+; 0.870 ; usuario:us|button:btn_decrementar|counter[14] ; usuario:us|button:btn_decrementar|counter[14] ; clk          ; clk         ; 0.000        ; 0.072      ; 1.137      ;
+; 0.871 ; usuario:us|button:btn_decrementar|counter[12] ; usuario:us|button:btn_decrementar|counter[12] ; clk          ; clk         ; 0.000        ; 0.072      ; 1.138      ;
+; 0.875 ; usuario:us|button:btn_incrementar|counter[15] ; usuario:us|button:btn_incrementar|counter[15] ; clk          ; clk         ; 0.000        ; 0.073      ; 1.143      ;
+; 0.879 ; usuario:us|toggler:tgl_d|q_o                  ; usuario:us|data_i                             ; clk          ; clk         ; 0.000        ; 0.071      ; 1.145      ;
+; 0.921 ; usuario:us|button:btn_incrementar|counter[15] ; usuario:us|button:btn_incrementar|counter[18] ; clk          ; clk         ; 0.000        ; 0.502      ; 1.618      ;
+; 0.934 ; usuario:us|button:btn_decrementar|counter[15] ; usuario:us|button:btn_decrementar|counter[18] ; clk          ; clk         ; 0.000        ; 0.490      ; 1.619      ;
+; 0.935 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[7]  ; clk          ; clk         ; 0.000        ; 0.502      ; 1.632      ;
+; 0.939 ; usuario:us|button:btn_decrementar|counter[13] ; usuario:us|button:btn_decrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.490      ; 1.624      ;
+; 0.940 ; usuario:us|button:btn_incrementar|counter[11] ; usuario:us|button:btn_incrementar|counter[17] ; clk          ; clk         ; 0.000        ; 0.502      ; 1.637      ;
+; 0.950 ; usuario:us|button:btn_incrementar|counter[14] ; usuario:us|button:btn_incrementar|counter[21] ; clk          ; clk         ; 0.000        ; 0.502      ; 1.647      ;
+; 0.951 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[7]  ; clk          ; clk         ; 0.000        ; 0.502      ; 1.648      ;
+; 0.954 ; usuario:us|button:btn_incrementar|counter[13] ; usuario:us|button:btn_incrementar|counter[20] ; clk          ; clk         ; 0.000        ; 0.502      ; 1.651      ;
+; 0.955 ; usuario:us|button:btn_incrementar|btn_nr      ; usuario:us|button:btn_incrementar|btn_nr2     ; clk          ; clk         ; 0.000        ; 0.134      ; 1.284      ;
+; 0.958 ; usuario:us|button:btn_decrementar|btn_deb     ; usuario:us|button:btn_decrementar|btn_deb_r   ; clk          ; clk         ; 0.000        ; 0.071      ; 1.224      ;
+; 0.958 ; usuario:us|button:btn_decrementar|btn_deb     ; usuario:us|button:btn_decrementar|pressed_o   ; clk          ; clk         ; 0.000        ; 0.071      ; 1.224      ;
+; 0.959 ; usuario:us|button:btn_decrementar|counter[12] ; usuario:us|button:btn_decrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.490      ; 1.644      ;
+; 0.959 ; usuario:us|button:btn_decrementar|counter[14] ; usuario:us|button:btn_decrementar|counter[18] ; clk          ; clk         ; 0.000        ; 0.490      ; 1.644      ;
++-------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Slow 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+Design MTBF is not calculated because the design doesn't meet its timing requirements.
+
+
+
++------------------------------------+
+; Fast 1200mV 0C Model Setup Summary ;
++-------+--------+-------------------+
+; Clock ; Slack  ; End Point TNS     ;
++-------+--------+-------------------+
+; clk   ; -0.982 ; -39.314           ;
++-------+--------+-------------------+
+
+
++-----------------------------------+
+; Fast 1200mV 0C Model Hold Summary ;
++-------+-------+-------------------+
+; Clock ; Slack ; End Point TNS     ;
++-------+-------+-------------------+
+; clk   ; 0.186 ; 0.000             ;
++-------+-------+-------------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++-------+--------+---------------------------------+
+; Clock ; Slack  ; End Point TNS                   ;
++-------+--------+---------------------------------+
+; clk   ; -3.000 ; -68.200                         ;
++-------+--------+---------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'clk'                                                                                                                                            ;
++--------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                     ; To Node                                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.982 ; usuario:us|button:btn_decrementar|counter[14] ; usuario:us|button:btn_decrementar|counter[11] ; clk          ; clk         ; 1.000        ; -0.036     ; 1.933      ;
+; -0.980 ; usuario:us|button:btn_decrementar|counter[14] ; usuario:us|button:btn_decrementar|counter[12] ; clk          ; clk         ; 1.000        ; -0.036     ; 1.931      ;
+; -0.979 ; usuario:us|button:btn_decrementar|counter[14] ; usuario:us|button:btn_decrementar|counter[13] ; clk          ; clk         ; 1.000        ; -0.036     ; 1.930      ;
+; -0.977 ; usuario:us|button:btn_decrementar|counter[14] ; usuario:us|button:btn_decrementar|counter[14] ; clk          ; clk         ; 1.000        ; -0.036     ; 1.928      ;
+; -0.977 ; usuario:us|button:btn_decrementar|counter[13] ; usuario:us|button:btn_decrementar|counter[11] ; clk          ; clk         ; 1.000        ; -0.036     ; 1.928      ;
+; -0.976 ; usuario:us|button:btn_decrementar|counter[14] ; usuario:us|button:btn_decrementar|counter[15] ; clk          ; clk         ; 1.000        ; -0.036     ; 1.927      ;
+; -0.975 ; usuario:us|button:btn_decrementar|counter[13] ; usuario:us|button:btn_decrementar|counter[12] ; clk          ; clk         ; 1.000        ; -0.036     ; 1.926      ;
+; -0.974 ; usuario:us|button:btn_decrementar|counter[13] ; usuario:us|button:btn_decrementar|counter[13] ; clk          ; clk         ; 1.000        ; -0.036     ; 1.925      ;
+; -0.973 ; usuario:us|button:btn_decrementar|counter[14] ; usuario:us|button:btn_decrementar|counter[17] ; clk          ; clk         ; 1.000        ; -0.036     ; 1.924      ;
+; -0.972 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[10] ; clk          ; clk         ; 1.000        ; -0.225     ; 1.734      ;
+; -0.972 ; usuario:us|button:btn_decrementar|counter[13] ; usuario:us|button:btn_decrementar|counter[14] ; clk          ; clk         ; 1.000        ; -0.036     ; 1.923      ;
+; -0.971 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[9]  ; clk          ; clk         ; 1.000        ; -0.225     ; 1.733      ;
+; -0.971 ; usuario:us|button:btn_decrementar|counter[13] ; usuario:us|button:btn_decrementar|counter[15] ; clk          ; clk         ; 1.000        ; -0.036     ; 1.922      ;
+; -0.969 ; usuario:us|button:btn_decrementar|counter[14] ; usuario:us|button:btn_decrementar|counter[19] ; clk          ; clk         ; 1.000        ; -0.036     ; 1.920      ;
+; -0.969 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[5]  ; clk          ; clk         ; 1.000        ; -0.225     ; 1.731      ;
+; -0.969 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[6]  ; clk          ; clk         ; 1.000        ; -0.225     ; 1.731      ;
+; -0.968 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[4]  ; clk          ; clk         ; 1.000        ; -0.225     ; 1.730      ;
+; -0.968 ; usuario:us|button:btn_decrementar|counter[13] ; usuario:us|button:btn_decrementar|counter[17] ; clk          ; clk         ; 1.000        ; -0.036     ; 1.919      ;
+; -0.966 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[2]  ; clk          ; clk         ; 1.000        ; -0.225     ; 1.728      ;
+; -0.965 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[0]  ; clk          ; clk         ; 1.000        ; -0.225     ; 1.727      ;
+; -0.965 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[1]  ; clk          ; clk         ; 1.000        ; -0.225     ; 1.727      ;
+; -0.964 ; usuario:us|button:btn_decrementar|counter[13] ; usuario:us|button:btn_decrementar|counter[19] ; clk          ; clk         ; 1.000        ; -0.036     ; 1.915      ;
+; -0.954 ; usuario:us|button:btn_decrementar|counter[18] ; usuario:us|button:btn_decrementar|counter[11] ; clk          ; clk         ; 1.000        ; -0.218     ; 1.723      ;
+; -0.952 ; usuario:us|button:btn_decrementar|counter[18] ; usuario:us|button:btn_decrementar|counter[12] ; clk          ; clk         ; 1.000        ; -0.218     ; 1.721      ;
+; -0.951 ; usuario:us|button:btn_decrementar|counter[18] ; usuario:us|button:btn_decrementar|counter[13] ; clk          ; clk         ; 1.000        ; -0.218     ; 1.720      ;
+; -0.949 ; usuario:us|button:btn_decrementar|counter[18] ; usuario:us|button:btn_decrementar|counter[14] ; clk          ; clk         ; 1.000        ; -0.218     ; 1.718      ;
+; -0.948 ; usuario:us|button:btn_decrementar|counter[18] ; usuario:us|button:btn_decrementar|counter[15] ; clk          ; clk         ; 1.000        ; -0.218     ; 1.717      ;
+; -0.945 ; usuario:us|button:btn_decrementar|counter[18] ; usuario:us|button:btn_decrementar|counter[17] ; clk          ; clk         ; 1.000        ; -0.218     ; 1.714      ;
+; -0.942 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[10] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.891      ;
+; -0.941 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[9]  ; clk          ; clk         ; 1.000        ; -0.038     ; 1.890      ;
+; -0.941 ; usuario:us|button:btn_decrementar|counter[18] ; usuario:us|button:btn_decrementar|counter[19] ; clk          ; clk         ; 1.000        ; -0.218     ; 1.710      ;
+; -0.939 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[5]  ; clk          ; clk         ; 1.000        ; -0.038     ; 1.888      ;
+; -0.939 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[6]  ; clk          ; clk         ; 1.000        ; -0.038     ; 1.888      ;
+; -0.938 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[4]  ; clk          ; clk         ; 1.000        ; -0.038     ; 1.887      ;
+; -0.937 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[10] ; clk          ; clk         ; 1.000        ; -0.037     ; 1.887      ;
+; -0.936 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[9]  ; clk          ; clk         ; 1.000        ; -0.037     ; 1.886      ;
+; -0.936 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[2]  ; clk          ; clk         ; 1.000        ; -0.038     ; 1.885      ;
+; -0.935 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[0]  ; clk          ; clk         ; 1.000        ; -0.038     ; 1.884      ;
+; -0.935 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[1]  ; clk          ; clk         ; 1.000        ; -0.038     ; 1.884      ;
+; -0.934 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[5]  ; clk          ; clk         ; 1.000        ; -0.037     ; 1.884      ;
+; -0.934 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[6]  ; clk          ; clk         ; 1.000        ; -0.037     ; 1.884      ;
+; -0.933 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[4]  ; clk          ; clk         ; 1.000        ; -0.037     ; 1.883      ;
+; -0.931 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[10] ; clk          ; clk         ; 1.000        ; -0.037     ; 1.881      ;
+; -0.931 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[2]  ; clk          ; clk         ; 1.000        ; -0.037     ; 1.881      ;
+; -0.930 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[9]  ; clk          ; clk         ; 1.000        ; -0.037     ; 1.880      ;
+; -0.930 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[0]  ; clk          ; clk         ; 1.000        ; -0.037     ; 1.880      ;
+; -0.930 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[1]  ; clk          ; clk         ; 1.000        ; -0.037     ; 1.880      ;
+; -0.929 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[8]  ; clk          ; clk         ; 1.000        ; -0.224     ; 1.692      ;
+; -0.928 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[5]  ; clk          ; clk         ; 1.000        ; -0.037     ; 1.878      ;
+; -0.928 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[6]  ; clk          ; clk         ; 1.000        ; -0.037     ; 1.878      ;
+; -0.927 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[19] ; clk          ; clk         ; 1.000        ; -0.224     ; 1.690      ;
+; -0.927 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[4]  ; clk          ; clk         ; 1.000        ; -0.037     ; 1.877      ;
+; -0.925 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[2]  ; clk          ; clk         ; 1.000        ; -0.037     ; 1.875      ;
+; -0.924 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[0]  ; clk          ; clk         ; 1.000        ; -0.037     ; 1.874      ;
+; -0.924 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[1]  ; clk          ; clk         ; 1.000        ; -0.037     ; 1.874      ;
+; -0.923 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[15] ; clk          ; clk         ; 1.000        ; -0.224     ; 1.686      ;
+; -0.922 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[14] ; clk          ; clk         ; 1.000        ; -0.224     ; 1.685      ;
+; -0.921 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[13] ; clk          ; clk         ; 1.000        ; -0.224     ; 1.684      ;
+; -0.920 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[11] ; clk          ; clk         ; 1.000        ; -0.224     ; 1.683      ;
+; -0.918 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[10] ; clk          ; clk         ; 1.000        ; -0.037     ; 1.868      ;
+; -0.917 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[9]  ; clk          ; clk         ; 1.000        ; -0.037     ; 1.867      ;
+; -0.915 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[5]  ; clk          ; clk         ; 1.000        ; -0.037     ; 1.865      ;
+; -0.915 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[6]  ; clk          ; clk         ; 1.000        ; -0.037     ; 1.865      ;
+; -0.914 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[4]  ; clk          ; clk         ; 1.000        ; -0.037     ; 1.864      ;
+; -0.912 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[2]  ; clk          ; clk         ; 1.000        ; -0.037     ; 1.862      ;
+; -0.911 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[10] ; clk          ; clk         ; 1.000        ; -0.225     ; 1.673      ;
+; -0.911 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[0]  ; clk          ; clk         ; 1.000        ; -0.037     ; 1.861      ;
+; -0.911 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[1]  ; clk          ; clk         ; 1.000        ; -0.037     ; 1.861      ;
+; -0.910 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[9]  ; clk          ; clk         ; 1.000        ; -0.225     ; 1.672      ;
+; -0.908 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[5]  ; clk          ; clk         ; 1.000        ; -0.225     ; 1.670      ;
+; -0.908 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[6]  ; clk          ; clk         ; 1.000        ; -0.225     ; 1.670      ;
+; -0.907 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[4]  ; clk          ; clk         ; 1.000        ; -0.225     ; 1.669      ;
+; -0.905 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[2]  ; clk          ; clk         ; 1.000        ; -0.225     ; 1.667      ;
+; -0.905 ; usuario:us|button:btn_decrementar|counter[16] ; usuario:us|button:btn_decrementar|counter[11] ; clk          ; clk         ; 1.000        ; -0.218     ; 1.674      ;
+; -0.904 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[0]  ; clk          ; clk         ; 1.000        ; -0.225     ; 1.666      ;
+; -0.904 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[1]  ; clk          ; clk         ; 1.000        ; -0.225     ; 1.666      ;
+; -0.903 ; usuario:us|button:btn_decrementar|counter[16] ; usuario:us|button:btn_decrementar|counter[12] ; clk          ; clk         ; 1.000        ; -0.218     ; 1.672      ;
+; -0.902 ; usuario:us|button:btn_decrementar|counter[16] ; usuario:us|button:btn_decrementar|counter[13] ; clk          ; clk         ; 1.000        ; -0.218     ; 1.671      ;
+; -0.900 ; usuario:us|button:btn_decrementar|counter[16] ; usuario:us|button:btn_decrementar|counter[14] ; clk          ; clk         ; 1.000        ; -0.218     ; 1.669      ;
+; -0.899 ; usuario:us|button:btn_decrementar|counter[16] ; usuario:us|button:btn_decrementar|counter[15] ; clk          ; clk         ; 1.000        ; -0.218     ; 1.668      ;
+; -0.899 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[8]  ; clk          ; clk         ; 1.000        ; -0.037     ; 1.849      ;
+; -0.897 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[19] ; clk          ; clk         ; 1.000        ; -0.037     ; 1.847      ;
+; -0.896 ; usuario:us|button:btn_decrementar|counter[16] ; usuario:us|button:btn_decrementar|counter[17] ; clk          ; clk         ; 1.000        ; -0.218     ; 1.665      ;
+; -0.894 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[8]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.845      ;
+; -0.893 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[15] ; clk          ; clk         ; 1.000        ; -0.037     ; 1.843      ;
+; -0.892 ; usuario:us|button:btn_decrementar|counter[16] ; usuario:us|button:btn_decrementar|counter[19] ; clk          ; clk         ; 1.000        ; -0.218     ; 1.661      ;
+; -0.892 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[19] ; clk          ; clk         ; 1.000        ; -0.036     ; 1.843      ;
+; -0.892 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[14] ; clk          ; clk         ; 1.000        ; -0.037     ; 1.842      ;
+; -0.891 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[13] ; clk          ; clk         ; 1.000        ; -0.037     ; 1.841      ;
+; -0.890 ; usuario:us|button:btn_incrementar|counter[8]  ; usuario:us|button:btn_incrementar|counter[11] ; clk          ; clk         ; 1.000        ; -0.037     ; 1.840      ;
+; -0.888 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[8]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.839      ;
+; -0.888 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[15] ; clk          ; clk         ; 1.000        ; -0.036     ; 1.839      ;
+; -0.887 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[14] ; clk          ; clk         ; 1.000        ; -0.036     ; 1.838      ;
+; -0.886 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[19] ; clk          ; clk         ; 1.000        ; -0.036     ; 1.837      ;
+; -0.886 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[13] ; clk          ; clk         ; 1.000        ; -0.036     ; 1.837      ;
+; -0.885 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[11] ; clk          ; clk         ; 1.000        ; -0.036     ; 1.836      ;
+; -0.884 ; usuario:us|button:btn_incrementar|counter[16] ; usuario:us|button:btn_incrementar|counter[10] ; clk          ; clk         ; 1.000        ; -0.226     ; 1.645      ;
+; -0.883 ; usuario:us|button:btn_incrementar|counter[16] ; usuario:us|button:btn_incrementar|counter[9]  ; clk          ; clk         ; 1.000        ; -0.226     ; 1.644      ;
+; -0.882 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[15] ; clk          ; clk         ; 1.000        ; -0.036     ; 1.833      ;
+; -0.881 ; usuario:us|button:btn_incrementar|counter[16] ; usuario:us|button:btn_incrementar|counter[5]  ; clk          ; clk         ; 1.000        ; -0.226     ; 1.642      ;
++--------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'clk'                                                                                                                                            ;
++-------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                     ; To Node                                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.186 ; usuario:us|toggler:tgl_i|q_o                  ; usuario:us|toggler:tgl_i|q_o                  ; clk          ; clk         ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; usuario:us|button:btn_incrementar|btn_deb     ; usuario:us|button:btn_incrementar|btn_deb     ; clk          ; clk         ; 0.000        ; 0.037      ; 0.307      ;
+; 0.187 ; usuario:us|data_i                             ; usuario:us|data_i                             ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; usuario:us|toggler:tgl_d|q_o                  ; usuario:us|toggler:tgl_d|q_o                  ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; usuario:us|button:btn_decrementar|btn_deb     ; usuario:us|button:btn_decrementar|btn_deb     ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
+; 0.192 ; usuario:us|button:btn_incrementar|pressed_o   ; usuario:us|toggler:tgl_i|q_o                  ; clk          ; clk         ; 0.000        ; 0.037      ; 0.313      ;
+; 0.197 ; usuario:us|button:btn_incrementar|counter[21] ; usuario:us|button:btn_incrementar|counter[21] ; clk          ; clk         ; 0.000        ; 0.044      ; 0.325      ;
+; 0.198 ; usuario:us|button:btn_decrementar|counter[21] ; usuario:us|button:btn_decrementar|counter[21] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.325      ;
+; 0.253 ; usuario:us|button:btn_decrementar|btn_deb_r   ; usuario:us|button:btn_decrementar|pressed_o   ; clk          ; clk         ; 0.000        ; 0.036      ; 0.373      ;
+; 0.259 ; usuario:us|button:btn_incrementar|counter[19] ; usuario:us|button:btn_incrementar|counter[20] ; clk          ; clk         ; 0.000        ; 0.225      ; 0.568      ;
+; 0.265 ; usuario:us|button:btn_incrementar|counter[11] ; usuario:us|button:btn_incrementar|counter[12] ; clk          ; clk         ; 0.000        ; 0.225      ; 0.574      ;
+; 0.266 ; usuario:us|button:btn_decrementar|counter[17] ; usuario:us|button:btn_decrementar|counter[18] ; clk          ; clk         ; 0.000        ; 0.218      ; 0.568      ;
+; 0.268 ; usuario:us|button:btn_incrementar|counter[6]  ; usuario:us|button:btn_incrementar|counter[7]  ; clk          ; clk         ; 0.000        ; 0.225      ; 0.577      ;
+; 0.269 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[3]  ; clk          ; clk         ; 0.000        ; 0.225      ; 0.578      ;
+; 0.269 ; usuario:us|button:btn_decrementar|pressed_o   ; usuario:us|toggler:tgl_d|q_o                  ; clk          ; clk         ; 0.000        ; 0.036      ; 0.389      ;
+; 0.271 ; usuario:us|button:btn_incrementar|counter[14] ; usuario:us|button:btn_incrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.225      ; 0.580      ;
+; 0.276 ; usuario:us|button:btn_incrementar|counter[10] ; usuario:us|button:btn_incrementar|counter[12] ; clk          ; clk         ; 0.000        ; 0.226      ; 0.586      ;
+; 0.289 ; usuario:us|button:btn_incrementar|counter[12] ; usuario:us|button:btn_incrementar|counter[12] ; clk          ; clk         ; 0.000        ; 0.044      ; 0.417      ;
+; 0.291 ; usuario:us|button:btn_decrementar|counter[16] ; usuario:us|button:btn_decrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.418      ;
+; 0.291 ; usuario:us|button:btn_incrementar|counter[17] ; usuario:us|button:btn_incrementar|counter[17] ; clk          ; clk         ; 0.000        ; 0.044      ; 0.419      ;
+; 0.291 ; usuario:us|button:btn_incrementar|counter[7]  ; usuario:us|button:btn_incrementar|counter[7]  ; clk          ; clk         ; 0.000        ; 0.044      ; 0.419      ;
+; 0.291 ; usuario:us|button:btn_incrementar|counter[3]  ; usuario:us|button:btn_incrementar|counter[3]  ; clk          ; clk         ; 0.000        ; 0.044      ; 0.419      ;
+; 0.291 ; usuario:us|button:btn_incrementar|counter[16] ; usuario:us|button:btn_incrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.044      ; 0.419      ;
+; 0.292 ; usuario:us|button:btn_incrementar|counter[18] ; usuario:us|button:btn_incrementar|counter[18] ; clk          ; clk         ; 0.000        ; 0.044      ; 0.420      ;
+; 0.292 ; usuario:us|button:btn_decrementar|counter[18] ; usuario:us|button:btn_decrementar|counter[18] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.419      ;
+; 0.295 ; usuario:us|button:btn_incrementar|btn_deb     ; usuario:us|button:btn_incrementar|btn_deb_r   ; clk          ; clk         ; 0.000        ; 0.223      ; 0.602      ;
+; 0.296 ; usuario:us|button:btn_decrementar|counter[10] ; usuario:us|button:btn_decrementar|counter[10] ; clk          ; clk         ; 0.000        ; 0.036      ; 0.416      ;
+; 0.297 ; usuario:us|button:btn_decrementar|counter[8]  ; usuario:us|button:btn_decrementar|counter[8]  ; clk          ; clk         ; 0.000        ; 0.036      ; 0.417      ;
+; 0.297 ; usuario:us|button:btn_incrementar|counter[6]  ; usuario:us|button:btn_incrementar|counter[6]  ; clk          ; clk         ; 0.000        ; 0.037      ; 0.418      ;
+; 0.297 ; usuario:us|button:btn_incrementar|counter[14] ; usuario:us|button:btn_incrementar|counter[14] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.418      ;
+; 0.297 ; usuario:us|button:btn_decrementar|btn_nr2     ; usuario:us|button:btn_decrementar|btn_deb     ; clk          ; clk         ; 0.000        ; 0.036      ; 0.417      ;
+; 0.298 ; usuario:us|button:btn_decrementar|counter[1]  ; usuario:us|button:btn_decrementar|counter[1]  ; clk          ; clk         ; 0.000        ; 0.036      ; 0.418      ;
+; 0.298 ; usuario:us|button:btn_decrementar|counter[6]  ; usuario:us|button:btn_decrementar|counter[6]  ; clk          ; clk         ; 0.000        ; 0.036      ; 0.418      ;
+; 0.298 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[2]  ; clk          ; clk         ; 0.000        ; 0.037      ; 0.419      ;
+; 0.298 ; usuario:us|button:btn_incrementar|counter[4]  ; usuario:us|button:btn_incrementar|counter[4]  ; clk          ; clk         ; 0.000        ; 0.037      ; 0.419      ;
+; 0.298 ; usuario:us|button:btn_incrementar|counter[13] ; usuario:us|button:btn_incrementar|counter[13] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.419      ;
+; 0.299 ; usuario:us|button:btn_decrementar|counter[2]  ; usuario:us|button:btn_decrementar|counter[2]  ; clk          ; clk         ; 0.000        ; 0.036      ; 0.419      ;
+; 0.299 ; usuario:us|button:btn_decrementar|counter[4]  ; usuario:us|button:btn_decrementar|counter[4]  ; clk          ; clk         ; 0.000        ; 0.036      ; 0.419      ;
+; 0.299 ; usuario:us|button:btn_decrementar|counter[9]  ; usuario:us|button:btn_decrementar|counter[9]  ; clk          ; clk         ; 0.000        ; 0.036      ; 0.419      ;
+; 0.299 ; usuario:us|button:btn_incrementar|counter[19] ; usuario:us|button:btn_incrementar|counter[19] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.420      ;
+; 0.299 ; usuario:us|button:btn_incrementar|counter[20] ; usuario:us|button:btn_incrementar|counter[20] ; clk          ; clk         ; 0.000        ; 0.044      ; 0.427      ;
+; 0.300 ; usuario:us|button:btn_decrementar|counter[3]  ; usuario:us|button:btn_decrementar|counter[3]  ; clk          ; clk         ; 0.000        ; 0.036      ; 0.420      ;
+; 0.300 ; usuario:us|button:btn_decrementar|counter[5]  ; usuario:us|button:btn_decrementar|counter[5]  ; clk          ; clk         ; 0.000        ; 0.036      ; 0.420      ;
+; 0.300 ; usuario:us|button:btn_decrementar|counter[17] ; usuario:us|button:btn_decrementar|counter[17] ; clk          ; clk         ; 0.000        ; 0.036      ; 0.420      ;
+; 0.300 ; usuario:us|button:btn_decrementar|counter[20] ; usuario:us|button:btn_decrementar|counter[20] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.427      ;
+; 0.303 ; usuario:us|button:btn_incrementar|counter[10] ; usuario:us|button:btn_incrementar|counter[10] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.424      ;
+; 0.304 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[1]  ; clk          ; clk         ; 0.000        ; 0.037      ; 0.425      ;
+; 0.305 ; usuario:us|button:btn_incrementar|counter[9]  ; usuario:us|button:btn_incrementar|counter[9]  ; clk          ; clk         ; 0.000        ; 0.037      ; 0.426      ;
+; 0.305 ; usuario:us|button:btn_incrementar|counter[11] ; usuario:us|button:btn_incrementar|counter[11] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.426      ;
+; 0.306 ; usuario:us|button:btn_decrementar|counter[11] ; usuario:us|button:btn_decrementar|counter[11] ; clk          ; clk         ; 0.000        ; 0.036      ; 0.426      ;
+; 0.306 ; usuario:us|button:btn_incrementar|counter[5]  ; usuario:us|button:btn_incrementar|counter[5]  ; clk          ; clk         ; 0.000        ; 0.037      ; 0.427      ;
+; 0.307 ; usuario:us|button:btn_decrementar|counter[7]  ; usuario:us|button:btn_decrementar|counter[7]  ; clk          ; clk         ; 0.000        ; 0.036      ; 0.427      ;
+; 0.308 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[0]  ; clk          ; clk         ; 0.000        ; 0.037      ; 0.429      ;
+; 0.309 ; usuario:us|button:btn_decrementar|counter[0]  ; usuario:us|button:btn_decrementar|counter[0]  ; clk          ; clk         ; 0.000        ; 0.036      ; 0.429      ;
+; 0.322 ; usuario:us|button:btn_incrementar|counter[19] ; usuario:us|button:btn_incrementar|counter[21] ; clk          ; clk         ; 0.000        ; 0.225      ; 0.631      ;
+; 0.324 ; usuario:us|button:btn_incrementar|counter[13] ; usuario:us|button:btn_incrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.225      ; 0.633      ;
+; 0.327 ; usuario:us|button:btn_incrementar|counter[1]  ; usuario:us|button:btn_incrementar|counter[3]  ; clk          ; clk         ; 0.000        ; 0.225      ; 0.636      ;
+; 0.329 ; usuario:us|button:btn_incrementar|counter[5]  ; usuario:us|button:btn_incrementar|counter[7]  ; clk          ; clk         ; 0.000        ; 0.225      ; 0.638      ;
+; 0.330 ; usuario:us|button:btn_incrementar|counter[9]  ; usuario:us|button:btn_incrementar|counter[12] ; clk          ; clk         ; 0.000        ; 0.226      ; 0.640      ;
+; 0.332 ; usuario:us|button:btn_incrementar|counter[15] ; usuario:us|button:btn_incrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.225      ; 0.641      ;
+; 0.332 ; usuario:us|button:btn_decrementar|counter[17] ; usuario:us|button:btn_decrementar|counter[20] ; clk          ; clk         ; 0.000        ; 0.218      ; 0.634      ;
+; 0.334 ; usuario:us|button:btn_incrementar|counter[14] ; usuario:us|button:btn_incrementar|counter[17] ; clk          ; clk         ; 0.000        ; 0.225      ; 0.643      ;
+; 0.335 ; usuario:us|button:btn_incrementar|counter[0]  ; usuario:us|button:btn_incrementar|counter[3]  ; clk          ; clk         ; 0.000        ; 0.225      ; 0.644      ;
+; 0.335 ; usuario:us|button:btn_incrementar|counter[4]  ; usuario:us|button:btn_incrementar|counter[7]  ; clk          ; clk         ; 0.000        ; 0.225      ; 0.644      ;
+; 0.337 ; usuario:us|button:btn_incrementar|counter[14] ; usuario:us|button:btn_incrementar|counter[18] ; clk          ; clk         ; 0.000        ; 0.225      ; 0.646      ;
+; 0.339 ; usuario:us|button:btn_decrementar|counter[15] ; usuario:us|button:btn_decrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.218      ; 0.641      ;
+; 0.340 ; usuario:us|button:btn_decrementar|counter[19] ; usuario:us|button:btn_decrementar|counter[20] ; clk          ; clk         ; 0.000        ; 0.218      ; 0.642      ;
+; 0.354 ; usuario:us|button:btn_decrementar|counter[14] ; usuario:us|button:btn_decrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.218      ; 0.656      ;
+; 0.372 ; usuario:us|button:btn_incrementar|counter[15] ; usuario:us|button:btn_incrementar|counter[15] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.493      ;
+; 0.373 ; usuario:us|button:btn_decrementar|counter[15] ; usuario:us|button:btn_decrementar|counter[15] ; clk          ; clk         ; 0.000        ; 0.036      ; 0.493      ;
+; 0.374 ; usuario:us|button:btn_decrementar|counter[12] ; usuario:us|button:btn_decrementar|counter[12] ; clk          ; clk         ; 0.000        ; 0.036      ; 0.494      ;
+; 0.374 ; usuario:us|button:btn_decrementar|counter[13] ; usuario:us|button:btn_decrementar|counter[13] ; clk          ; clk         ; 0.000        ; 0.036      ; 0.494      ;
+; 0.374 ; usuario:us|button:btn_decrementar|counter[14] ; usuario:us|button:btn_decrementar|counter[14] ; clk          ; clk         ; 0.000        ; 0.036      ; 0.494      ;
+; 0.374 ; usuario:us|button:btn_decrementar|counter[19] ; usuario:us|button:btn_decrementar|counter[19] ; clk          ; clk         ; 0.000        ; 0.036      ; 0.494      ;
+; 0.378 ; usuario:us|toggler:tgl_d|q_o                  ; usuario:us|data_i                             ; clk          ; clk         ; 0.000        ; 0.036      ; 0.498      ;
+; 0.387 ; usuario:us|button:btn_incrementar|counter[13] ; usuario:us|button:btn_incrementar|counter[17] ; clk          ; clk         ; 0.000        ; 0.225      ; 0.696      ;
+; 0.390 ; usuario:us|button:btn_incrementar|counter[13] ; usuario:us|button:btn_incrementar|counter[18] ; clk          ; clk         ; 0.000        ; 0.225      ; 0.699      ;
+; 0.395 ; usuario:us|button:btn_decrementar|counter[17] ; usuario:us|button:btn_decrementar|counter[21] ; clk          ; clk         ; 0.000        ; 0.218      ; 0.697      ;
+; 0.395 ; usuario:us|button:btn_incrementar|counter[15] ; usuario:us|button:btn_incrementar|counter[17] ; clk          ; clk         ; 0.000        ; 0.225      ; 0.704      ;
+; 0.397 ; usuario:us|button:btn_incrementar|counter[11] ; usuario:us|button:btn_incrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.225      ; 0.706      ;
+; 0.398 ; usuario:us|button:btn_incrementar|counter[15] ; usuario:us|button:btn_incrementar|counter[18] ; clk          ; clk         ; 0.000        ; 0.225      ; 0.707      ;
+; 0.401 ; usuario:us|button:btn_incrementar|counter[2]  ; usuario:us|button:btn_incrementar|counter[7]  ; clk          ; clk         ; 0.000        ; 0.225      ; 0.710      ;
+; 0.402 ; usuario:us|button:btn_incrementar|counter[6]  ; usuario:us|button:btn_incrementar|counter[12] ; clk          ; clk         ; 0.000        ; 0.226      ; 0.712      ;
+; 0.403 ; usuario:us|button:btn_incrementar|counter[14] ; usuario:us|button:btn_incrementar|counter[20] ; clk          ; clk         ; 0.000        ; 0.225      ; 0.712      ;
+; 0.403 ; usuario:us|button:btn_decrementar|counter[19] ; usuario:us|button:btn_decrementar|counter[21] ; clk          ; clk         ; 0.000        ; 0.218      ; 0.705      ;
+; 0.404 ; usuario:us|button:btn_decrementar|counter[11] ; usuario:us|button:btn_decrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.218      ; 0.706      ;
+; 0.405 ; usuario:us|button:btn_decrementar|counter[15] ; usuario:us|button:btn_decrementar|counter[18] ; clk          ; clk         ; 0.000        ; 0.218      ; 0.707      ;
+; 0.406 ; usuario:us|button:btn_decrementar|counter[13] ; usuario:us|button:btn_decrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.218      ; 0.708      ;
+; 0.408 ; usuario:us|button:btn_incrementar|counter[10] ; usuario:us|button:btn_incrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.226      ; 0.718      ;
+; 0.408 ; usuario:us|button:btn_decrementar|counter[10] ; usuario:us|button:btn_decrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.218      ; 0.710      ;
+; 0.409 ; usuario:us|button:btn_incrementar|btn_nr      ; usuario:us|button:btn_incrementar|btn_nr2     ; clk          ; clk         ; 0.000        ; 0.059      ; 0.552      ;
+; 0.420 ; usuario:us|button:btn_decrementar|counter[12] ; usuario:us|button:btn_decrementar|counter[16] ; clk          ; clk         ; 0.000        ; 0.218      ; 0.722      ;
+; 0.420 ; usuario:us|button:btn_decrementar|counter[14] ; usuario:us|button:btn_decrementar|counter[18] ; clk          ; clk         ; 0.000        ; 0.218      ; 0.722      ;
+; 0.429 ; usuario:us|button:btn_decrementar|btn_deb     ; usuario:us|button:btn_decrementar|btn_deb_r   ; clk          ; clk         ; 0.000        ; 0.035      ; 0.548      ;
+; 0.429 ; usuario:us|button:btn_decrementar|btn_deb     ; usuario:us|button:btn_decrementar|pressed_o   ; clk          ; clk         ; 0.000        ; 0.035      ; 0.548      ;
+; 0.432 ; usuario:us|button:btn_incrementar|btn_deb_r   ; usuario:us|button:btn_incrementar|pressed_o   ; clk          ; clk         ; 0.000        ; -0.144     ; 0.372      ;
+; 0.439 ; usuario:us|button:btn_incrementar|counter[17] ; usuario:us|button:btn_incrementar|counter[18] ; clk          ; clk         ; 0.000        ; 0.044      ; 0.567      ;
+; 0.446 ; usuario:us|button:btn_incrementar|counter[13] ; usuario:us|button:btn_incrementar|counter[14] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.567      ;
+; 0.446 ; usuario:us|button:btn_decrementar|counter[1]  ; usuario:us|button:btn_decrementar|counter[2]  ; clk          ; clk         ; 0.000        ; 0.036      ; 0.566      ;
+; 0.447 ; usuario:us|button:btn_decrementar|counter[9]  ; usuario:us|button:btn_decrementar|counter[10] ; clk          ; clk         ; 0.000        ; 0.036      ; 0.567      ;
++-------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Fast 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+Design MTBF is not calculated because the design doesn't meet its timing requirements.
+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+----------+-------+----------+---------+---------------------+
+; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -3.714   ; 0.186 ; N/A      ; N/A     ; -3.000              ;
+;  clk             ; -3.714   ; 0.186 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -163.861 ; 0.0   ; 0.0      ; 0.0     ; -93.707             ;
+;  clk             ; -163.861 ; 0.000 ; N/A      ; N/A     ; -93.707             ;
++------------------+----------+-------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; leds[0]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; leds[1]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; leds[2]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; leds[3]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; teste_btn     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; start_i                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; clk                     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; rst_n                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inc_i                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; dec_i                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; leds[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.07e-09 V                   ; 2.36 V              ; -0.00737 V          ; 0.209 V                              ; 0.012 V                              ; 5.22e-10 s                  ; 5.33e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.07e-09 V                  ; 2.36 V             ; -0.00737 V         ; 0.209 V                             ; 0.012 V                             ; 5.22e-10 s                 ; 5.33e-10 s                 ; Yes                       ; Yes                       ;
+; leds[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.07e-09 V                   ; 2.36 V              ; -0.00737 V          ; 0.209 V                              ; 0.012 V                              ; 5.22e-10 s                  ; 5.33e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.07e-09 V                  ; 2.36 V             ; -0.00737 V         ; 0.209 V                             ; 0.012 V                             ; 5.22e-10 s                 ; 5.33e-10 s                 ; Yes                       ; Yes                       ;
+; leds[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.07e-09 V                   ; 2.36 V              ; -0.00737 V          ; 0.209 V                              ; 0.012 V                              ; 5.22e-10 s                  ; 5.33e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.07e-09 V                  ; 2.36 V             ; -0.00737 V         ; 0.209 V                             ; 0.012 V                             ; 5.22e-10 s                 ; 5.33e-10 s                 ; Yes                       ; Yes                       ;
+; leds[3]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.07e-09 V                   ; 2.36 V              ; -0.00737 V          ; 0.209 V                              ; 0.012 V                              ; 5.22e-10 s                  ; 5.33e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.07e-09 V                  ; 2.36 V             ; -0.00737 V         ; 0.209 V                             ; 0.012 V                             ; 5.22e-10 s                 ; 5.33e-10 s                 ; Yes                       ; Yes                       ;
+; teste_btn     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.8e-09 V                    ; 2.37 V              ; -0.00373 V          ; 0.104 V                              ; 0.011 V                              ; 4.34e-10 s                  ; 3.82e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.8e-09 V                   ; 2.37 V             ; -0.00373 V         ; 0.104 V                             ; 0.011 V                             ; 4.34e-10 s                 ; 3.82e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.74e-09 V                   ; 2.37 V              ; -0.0346 V           ; 0.198 V                              ; 0.094 V                              ; 3.14e-10 s                  ; 2.92e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.74e-09 V                  ; 2.37 V             ; -0.0346 V          ; 0.198 V                             ; 0.094 V                             ; 3.14e-10 s                 ; 2.92e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.57e-09 V                   ; 2.37 V              ; -0.00683 V          ; 0.171 V                              ; 0.018 V                              ; 4.97e-10 s                  ; 6.66e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.57e-09 V                  ; 2.37 V             ; -0.00683 V         ; 0.171 V                             ; 0.018 V                             ; 4.97e-10 s                 ; 6.66e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; leds[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.93e-07 V                   ; 2.34 V              ; -0.00869 V          ; 0.14 V                               ; 0.046 V                              ; 6.89e-10 s                  ; 6.56e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.93e-07 V                  ; 2.34 V             ; -0.00869 V         ; 0.14 V                              ; 0.046 V                             ; 6.89e-10 s                 ; 6.56e-10 s                 ; Yes                       ; Yes                       ;
+; leds[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.93e-07 V                   ; 2.34 V              ; -0.00869 V          ; 0.14 V                               ; 0.046 V                              ; 6.89e-10 s                  ; 6.56e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.93e-07 V                  ; 2.34 V             ; -0.00869 V         ; 0.14 V                              ; 0.046 V                             ; 6.89e-10 s                 ; 6.56e-10 s                 ; Yes                       ; Yes                       ;
+; leds[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.93e-07 V                   ; 2.34 V              ; -0.00869 V          ; 0.14 V                               ; 0.046 V                              ; 6.89e-10 s                  ; 6.56e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.93e-07 V                  ; 2.34 V             ; -0.00869 V         ; 0.14 V                              ; 0.046 V                             ; 6.89e-10 s                 ; 6.56e-10 s                 ; Yes                       ; Yes                       ;
+; leds[3]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.93e-07 V                   ; 2.34 V              ; -0.00869 V          ; 0.14 V                               ; 0.046 V                              ; 6.89e-10 s                  ; 6.56e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.93e-07 V                  ; 2.34 V             ; -0.00869 V         ; 0.14 V                              ; 0.046 V                             ; 6.89e-10 s                 ; 6.56e-10 s                 ; Yes                       ; Yes                       ;
+; teste_btn     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.85e-07 V                   ; 2.35 V              ; -0.0123 V           ; 0.144 V                              ; 0.042 V                              ; 4.81e-10 s                  ; 4.81e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.85e-07 V                  ; 2.35 V             ; -0.0123 V          ; 0.144 V                             ; 0.042 V                             ; 4.81e-10 s                 ; 4.81e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.55e-07 V                   ; 2.35 V              ; -0.00221 V          ; 0.097 V                              ; 0.005 V                              ; 4.49e-10 s                  ; 3.85e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.55e-07 V                  ; 2.35 V             ; -0.00221 V         ; 0.097 V                             ; 0.005 V                             ; 4.49e-10 s                 ; 3.85e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.54e-07 V                   ; 2.34 V              ; -0.00774 V          ; 0.109 V                              ; 0.026 V                              ; 6.58e-10 s                  ; 8.24e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.54e-07 V                  ; 2.34 V             ; -0.00774 V         ; 0.109 V                             ; 0.026 V                             ; 6.58e-10 s                 ; 8.24e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; leds[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
+; leds[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
+; leds[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
+; leds[3]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
+; teste_btn     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.22e-08 V                   ; 2.74 V              ; -0.06 V             ; 0.158 V                              ; 0.08 V                               ; 2.68e-10 s                  ; 2.19e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.22e-08 V                  ; 2.74 V             ; -0.06 V            ; 0.158 V                             ; 0.08 V                              ; 2.68e-10 s                 ; 2.19e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.54e-08 V                   ; 2.7 V               ; -0.00943 V          ; 0.276 V                              ; 0.035 V                              ; 3.19e-10 s                  ; 4.99e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.54e-08 V                  ; 2.7 V              ; -0.00943 V         ; 0.276 V                             ; 0.035 V                             ; 3.19e-10 s                 ; 4.99e-10 s                 ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 2594     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 2594     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 3     ; 3    ;
+; Unconstrained Input Port Paths  ; 63    ; 63   ;
+; Unconstrained Output Ports      ; 5     ; 5    ;
+; Unconstrained Output Port Paths ; 5     ; 5    ;
++---------------------------------+-------+------+
+
+
++-------------------------------------+
+; Clock Status Summary                ;
++--------+-------+------+-------------+
+; Target ; Clock ; Type ; Status      ;
++--------+-------+------+-------------+
+; clk    ; clk   ; Base ; Constrained ;
++--------+-------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; dec_i      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inc_i      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; rst_n      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; leds[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; leds[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; leds[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; leds[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; teste_btn   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; dec_i      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inc_i      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; rst_n      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; leds[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; leds[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; leds[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; leds[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; teste_btn   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+    Info: Processing started: Sun Nov 10 22:21:25 2024
+Info: Command: quartus_sta prime -c prime
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 24 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'prime.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -3.714
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.714            -163.861 clk 
+Info (332146): Worst-case hold slack is 0.452
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.452               0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -93.707 clk 
+Info (332114): Report Metastability: Found 2 synchronizer chains.
+    Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -3.372
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.372            -148.631 clk 
+Info (332146): Worst-case hold slack is 0.401
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.401               0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -93.707 clk 
+Info (332114): Report Metastability: Found 2 synchronizer chains.
+    Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
+Info: Analyzing Fast 1200mV 0C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -0.982
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.982             -39.314 clk 
+Info (332146): Worst-case hold slack is 0.186
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.186               0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -68.200 clk 
+Info (332114): Report Metastability: Found 2 synchronizer chains.
+    Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 581 megabytes
+    Info: Processing ended: Sun Nov 10 22:21:26 2024
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
