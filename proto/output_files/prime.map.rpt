@@ -1,5 +1,5 @@
 Analysis & Synthesis report for prime
-Mon Nov 11 23:54:09 2024
+Tue Nov 12 20:33:32 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -10,7 +10,17 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |prime|estado_atual
+  9. User-Specified and Inferred Latches
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -37,20 +47,20 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Mon Nov 11 23:54:09 2024              ;
+; Analysis & Synthesis Status        ; Successful - Tue Nov 12 20:33:32 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; prime                                          ;
 ; Top-level Entity Name              ; prime                                          ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; N/A until Partition Merge                      ;
-;     Total combinational functions  ; N/A until Partition Merge                      ;
-;     Dedicated logic registers      ; N/A until Partition Merge                      ;
-; Total registers                    ; N/A until Partition Merge                      ;
-; Total pins                         ; N/A until Partition Merge                      ;
-; Total virtual pins                 ; N/A until Partition Merge                      ;
-; Total memory bits                  ; N/A until Partition Merge                      ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                      ;
-; Total PLLs                         ; N/A until Partition Merge                      ;
+; Total logic elements               ; 41                                             ;
+;     Total combinational functions  ; 39                                             ;
+;     Dedicated logic registers      ; 6                                              ;
+; Total registers                    ; 6                                              ;
+; Total pins                         ; 9                                              ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
 +------------------------------------+------------------------------------------------+
 
 
@@ -149,11 +159,184 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-16        ;   0.0%      ;
 +----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                              ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                          ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
+; ../rtl/prime.sv                  ; yes             ; User SystemVerilog HDL File  ; /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv                            ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; /home/caie/intelFPGA_lite/23.1std/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; /home/caie/intelFPGA_lite/23.1std/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; /home/caie/intelFPGA_lite/23.1std/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal231.inc                   ; yes             ; Megafunction                 ; /home/caie/intelFPGA_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc      ;         ;
+; db/lpm_divide_i9m.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/caie/projects/system_verilog/tb_eduardo/proto/db/lpm_divide_i9m.tdf             ;         ;
+; db/sign_div_unsign_7kh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/caie/projects/system_verilog/tb_eduardo/proto/db/sign_div_unsign_7kh.tdf        ;         ;
+; db/alt_u_div_24f.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/caie/projects/system_verilog/tb_eduardo/proto/db/alt_u_div_24f.tdf              ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/caie/projects/system_verilog/tb_eduardo/proto/db/add_sub_7pc.tdf                ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/caie/projects/system_verilog/tb_eduardo/proto/db/add_sub_8pc.tdf                ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 41    ;
+;                                             ;       ;
+; Total combinational functions               ; 39    ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 16    ;
+;     -- 3 input functions                    ; 16    ;
+;     -- <=2 input functions                  ; 7     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 32    ;
+;     -- arithmetic mode                      ; 7     ;
+;                                             ;       ;
+; Total registers                             ; 6     ;
+;     -- Dedicated logic registers            ; 6     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 9     ;
+;                                             ;       ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; i[0]  ;
+; Maximum fan-out                             ; 10    ;
+; Total fan-out                               ; 151   ;
+; Average fan-out                             ; 2.40  ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                             ;
++----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                    ; Entity Name         ; Library Name ;
++----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |prime                                 ; 39 (23)             ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 9    ; 0            ; |prime                                                                                                 ; prime               ; work         ;
+;    |lpm_divide:Mod0|                   ; 16 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |prime|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_i9m:auto_generated|  ; 16 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |prime|lpm_divide:Mod0|lpm_divide_i9m:auto_generated                                                   ; lpm_divide_i9m      ; work         ;
+;          |sign_div_unsign_7kh:divider| ; 16 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |prime|lpm_divide:Mod0|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh ; work         ;
+;             |alt_u_div_24f:divider|    ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |prime|lpm_divide:Mod0|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider ; alt_u_div_24f       ; work         ;
++----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------+
+; State Machine - |prime|estado_atual                                                                             ;
++------------------------+------------------------+--------------------+----------------------+-------------------+
+; Name                   ; estado_atual.NOT_PRIME ; estado_atual.PRIME ; estado_atual.COMPUTE ; estado_atual.IDLE ;
++------------------------+------------------------+--------------------+----------------------+-------------------+
+; estado_atual.IDLE      ; 0                      ; 0                  ; 0                    ; 0                 ;
+; estado_atual.COMPUTE   ; 0                      ; 0                  ; 1                    ; 1                 ;
+; estado_atual.PRIME     ; 0                      ; 1                  ; 0                    ; 1                 ;
+; estado_atual.NOT_PRIME ; 1                      ; 0                  ; 0                    ; 1                 ;
++------------------------+------------------------+--------------------+----------------------+-------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; i[0]                                               ; WideNor0            ; yes                    ;
+; i[1]                                               ; WideNor0            ; yes                    ;
+; i[2]                                               ; WideNor0            ; yes                    ;
+; i[3]                                               ; WideNor0            ; yes                    ;
+; Number of user-specified and inferred latches = 4  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 6     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 6     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; valid_o~reg0                           ; 1       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 4              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_i9m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 9                           ;
+; cycloneiii_ff         ; 6                           ;
+;     CLR               ; 6                           ;
+; cycloneiii_lcell_comb ; 40                          ;
+;     arith             ; 7                           ;
+;         3 data inputs ; 7                           ;
+;     normal            ; 33                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 9                           ;
+;         4 data inputs ; 16                          ;
+;                       ;                             ;
+; Max LUT depth         ; 8.40                        ;
+; Average LUT depth     ; 5.38                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -162,12 +345,12 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Mon Nov 11 23:54:05 2024
+    Info: Processing started: Tue Nov 12 20:33:27 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off prime -c prime
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 24 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file /home/caie/projects/system_verilog/tb_eduardo/rtl/user.sv
-    Info (12023): Found entity 1: usuario File: /home/caie/projects/system_verilog/tb_eduardo/rtl/user.sv Line: 1
+    Info (12023): Found entity 1: usuario File: /home/caie/projects/system_verilog/tb_eduardo/rtl/user.sv Line: 82
 Info (12021): Found 1 design units, including 1 entities, in source file /home/caie/projects/system_verilog/tb_eduardo/rtl/toggler.sv
     Info (12023): Found entity 1: toggler File: /home/caie/projects/system_verilog/tb_eduardo/rtl/toggler.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv
@@ -177,23 +360,52 @@ Info (12021): Found 1 design units, including 1 entities, in source file rz.sv
 Info (12021): Found 1 design units, including 1 entities, in source file button.sv
     Info (12023): Found entity 1: button File: /home/caie/projects/system_verilog/tb_eduardo/proto/button.sv Line: 1
 Info (12127): Elaborating entity "prime" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at prime.sv(88): truncated value with size 32 to match size of target (4) File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 88
-Warning (10240): Verilog HDL Always Construct warning at prime.sv(79): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 79
-Error (10166): SystemVerilog RTL Coding error at prime.sv(79): always_comb construct does not infer purely combinational logic. File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 79
-Info (10041): Inferred latch for "i[0]" at prime.sv(79) File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 79
-Info (10041): Inferred latch for "i[1]" at prime.sv(79) File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 79
-Info (10041): Inferred latch for "i[2]" at prime.sv(79) File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 79
-Info (10041): Inferred latch for "i[3]" at prime.sv(79) File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 79
-Error (10028): Can't resolve multiple constant drivers for net "i[3]" at prime.sv(74) File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 74
-Error (10029): Constant driver at prime.sv(79) File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 79
-Error (10028): Can't resolve multiple constant drivers for net "i[2]" at prime.sv(74) File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 74
-Error (10028): Can't resolve multiple constant drivers for net "i[1]" at prime.sv(74) File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 74
-Error (10028): Can't resolve multiple constant drivers for net "i[0]" at prime.sv(74) File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 74
-Error (12153): Can't elaborate top-level user hierarchy
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 7 errors, 3 warnings
-    Error: Peak virtual memory: 344 megabytes
-    Error: Processing ended: Mon Nov 11 23:54:10 2024
-    Error: Elapsed time: 00:00:05
-    Error: Total CPU time (on all processors): 00:00:13
+Warning (10230): Verilog HDL assignment warning at prime.sv(76): truncated value with size 32 to match size of target (4) File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 76
+Info (10264): Verilog HDL Case Statement information at prime.sv(74): all case item expressions in this case statement are onehot File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 74
+Warning (10240): Verilog HDL Always Construct warning at prime.sv(71): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 71
+Info (10041): Inferred latch for "i[0]" at prime.sv(71) File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 71
+Info (10041): Inferred latch for "i[1]" at prime.sv(71) File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 71
+Info (10041): Inferred latch for "i[2]" at prime.sv(71) File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 71
+Info (10041): Inferred latch for "i[3]" at prime.sv(71) File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 71
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 87
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 87
+Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 87
+    Info (12134): Parameter "LPM_WIDTHN" = "4"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_i9m.tdf
+    Info (12023): Found entity 1: lpm_divide_i9m File: /home/caie/projects/system_verilog/tb_eduardo/proto/db/lpm_divide_i9m.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_7kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_7kh File: /home/caie/projects/system_verilog/tb_eduardo/proto/db/sign_div_unsign_7kh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_24f.tdf
+    Info (12023): Found entity 1: alt_u_div_24f File: /home/caie/projects/system_verilog/tb_eduardo/proto/db/alt_u_div_24f.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: /home/caie/projects/system_verilog/tb_eduardo/proto/db/add_sub_7pc.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: /home/caie/projects/system_verilog/tb_eduardo/proto/db/add_sub_8pc.tdf Line: 23
+Warning (13012): Latch i[0] has unsafe behavior File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 71
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal estado_atual.COMPUTE File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 63
+Warning (13012): Latch i[1] has unsafe behavior File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 71
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal estado_atual.COMPUTE File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 63
+Warning (13012): Latch i[2] has unsafe behavior File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 71
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal estado_atual.COMPUTE File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 63
+Warning (13012): Latch i[3] has unsafe behavior File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 71
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal estado_atual.COMPUTE File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 63
+Info (13000): Registers with preset signals will power-up high File: /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv Line: 46
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 50 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 7 input pins
+    Info (21059): Implemented 2 output pins
+    Info (21061): Implemented 41 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 517 megabytes
+    Info: Processing ended: Tue Nov 12 20:33:32 2024
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:13
 
 

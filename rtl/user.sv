@@ -89,21 +89,63 @@ module usuario (
 
     output logic [3:0] leds
 );
+
+    logic increase_press;
+    btnobouncer btn_inc (
+        .clk(clk),  
+        .rst_n(rst_n),
+        .btn_ni(inc_i),
+        .pressed_o(increase_press)
+    );
+
+    logic decrese_press;
+    btnobouncer btn_dec (
+        .clk(clk),  
+        .rst_n(rst_n),
+        .btn_ni(dec_i),
+        .pressed_o(decrese_press)
+    );
+
+    logic start_press;
+    btnobouncer btn_start (
+        .clk(clk),  
+        .rst_n(rst_n),
+        .btn_ni(start_i),
+        .pressed_o(start_press)
+    );
+
+    logic prime_o;
+    logic valid_o;
     logic [3:0] data_i;
-    always_ff @(posedge clk or negedge rst_n) begin
-        if (!rst_n)
-            data_i <= 4'b0000;
-        else if (inc_i)
-            data_i <= data_i + 1;
-        else if (dec_i && data_i != '0)
-            data_i <= data_i - 1;
-    end
+    prime prime_uud (
+        .clk(clk),
+        .rst_n(rst_n),
+        .en_i(start_press),
+        .data_i(data_i),
+        .prime_o(prime_o),
+        .valid_o(valid_o)
+    );
 
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n)
+            data_i <= 4'b0010;
+        else if (!valid_o)
+            data_i <= data_i;
+        else if (increase_press)
+            data_i <= data_i + 1;
+        else if (decrese_press && data_i > 4'b0010)
+            data_i <= data_i - 1;
+    end
+
+    always_ff @(data_i) begin
+        leds <= ~data_i;
+    end
+
+    always_ff @(posedge valid_o) begin
+        if (prime_o)
+            leds <= 4'b1110;
+        else
             leds <= 4'b1111;
-        else if (start_i)
-            leds <= ~data_i;
     end
 
 endmodule
