@@ -86,6 +86,7 @@ module usuario (
     input logic inc_i,
     input logic dec_i,
     input logic start_i,
+    input logic visu_i,
 
     output logic [3:0] leds
 );
@@ -131,21 +132,23 @@ module usuario (
             data_i <= 4'b0010;
         else if (!valid_o)
             data_i <= data_i;
-        else if (increase_press)
+        else if (increase_press && data_i < '1)
             data_i <= data_i + 1;
         else if (decrese_press && data_i > 4'b0010)
             data_i <= data_i - 1;
     end
 
-    always_ff @(data_i) begin
-        leds <= ~data_i;
-    end
-
-    always_ff @(posedge valid_o) begin
-        if (prime_o)
-            leds <= 4'b1110;
-        else
+    always_ff @(posedge clk or negedge rst_n) begin
+        if (!rst_n)
             leds <= 4'b1111;
+        else if (!visu_i) begin
+            if (prime_o)
+                leds <= 4'b1110;
+            else
+                leds <= 4'b1111;
+        end
+        else
+            leds <= ~data_i;
     end
 
 endmodule

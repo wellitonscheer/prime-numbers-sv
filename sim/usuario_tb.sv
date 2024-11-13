@@ -8,6 +8,7 @@ module usuario_tb;
     logic inc_i = 1;
     logic dec_i = 1;
     logic start_i = 1;
+    logic visu_i = 1;
 
     logic [3:0] leds;
 
@@ -17,6 +18,7 @@ module usuario_tb;
         .inc_i(inc_i),
         .dec_i(dec_i),
         .start_i(start_i),
+        .visu_i(visu_i),
         .leds(leds)
     );
 
@@ -27,7 +29,7 @@ module usuario_tb;
         rst_n = 1; // nao pressionado
         @(negedge clk)
 
-        $display("leds tem q ser tudo 1 ('1) tudo desligado");
+        $display("leds tem q ser b0010 (b1101) tudo desligado");
         $display("Leds=%b", leds);
         
         inc_i = 0; // pressionado
@@ -37,10 +39,15 @@ module usuario_tb;
         start_i = 0; // pressionado
         repeat (5) @(posedge clk);
         start_i = 1;
-        @(leds) // espera os leds mudar
+        repeat (5) @(posedge clk);
+        visu_i = 0;
+        repeat (2) @(posedge clk);
 
         $display("leds tem q ser 0 no ultimo (1110) (led liga com 0)");
         $display("Leds=%b", leds);
+
+        repeat (2) @(posedge clk);
+        visu_i = 1;
 
         repeat (5) @(posedge clk);
 
@@ -51,7 +58,6 @@ module usuario_tb;
         start_i = 0; // pressionado
         repeat (5) @(posedge clk);
         start_i = 1;
-        @(leds) // espera os leds mudar
 
         $display("leds tem ser valor 2 (0010) invertido fica (1101) (led liga com 0)");
         $display("Leds=%b", leds);
@@ -65,7 +71,6 @@ module usuario_tb;
         start_i = 0; // pressionado
         repeat (5) @(posedge clk);
         start_i = 1;
-        @(leds) // espera os leds mudar
 
         $display("leds tem ser valor 1 (0001) inverte (1110) (led liga com 0)");
         $display("Leds=%b", leds);
