@@ -130,14 +130,17 @@ module prime (
     // always_ff que atualiza o prime_o
         // Quando ele é prime? --> Depende do estado_atual
         // Quando ele não é prime? --> Depende do estado_atual
+ 
     always_ff @(posedge clk or negedge rst_n) begin
         if(!rst_n)
             prime_o <= 0;
         else
             if (estado_atual == PRIME)
                 prime_o <= 1;
-            else
+            else if (estado_atual == NOT_PRIME)
                 prime_o <= 0;
+            else
+                prime_o <= prime_o;
     end
     
 endmodule

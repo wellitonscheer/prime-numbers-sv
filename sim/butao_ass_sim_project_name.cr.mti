@@ -1,4 +1,11 @@
-/home/caie/projects/system_verilog/tb_eduardo/rtl/toggler.sv {1 {vlog -work butao_ass_library_name -sv -stats=none /home/caie/projects/system_verilog/tb_eduardo/rtl/toggler.sv
+/home/caie/projects/system_verilog/tb_eduardo/sim/usuario_tb.sv {1 {vlog -work work -sv -stats=none /home/caie/projects/system_verilog/tb_eduardo/sim/usuario_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module usuario_tb
+
+Top level modules:
+	usuario_tb
+
+} {} {}} /home/caie/projects/system_verilog/tb_eduardo/rtl/toggler.sv {1 {vlog -work butao_ass_library_name -sv -stats=none /home/caie/projects/system_verilog/tb_eduardo/rtl/toggler.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module toggler
 
@@ -12,12 +19,33 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	prime
 
+} {} {}} /home/caie/projects/system_verilog/tb_eduardo/sim/prime_tb.sv {1 {vlog -work work -sv -stats=none /home/caie/projects/system_verilog/tb_eduardo/sim/prime_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module prime_tb
+
+Top level modules:
+	prime_tb
+
 } {} {}} /home/caie/projects/system_verilog/tb_eduardo/proto/button.sv {1 {vlog -work butao_ass_library_name -sv -stats=none /home/caie/projects/system_verilog/tb_eduardo/proto/button.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module button
 
 Top level modules:
 	button
+
+} {} {}} /home/caie/projects/system_verilog/tb_eduardo/proto/btnobouncer.sv {1 {vlog -work work -sv -stats=none /home/caie/projects/system_verilog/tb_eduardo/proto/btnobouncer.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module btnobouncer
+
+Top level modules:
+	btnobouncer
+
+} {} {}} /home/caie/projects/system_verilog/tb_eduardo/rtl/user.sv {1 {vlog -work work -sv -stats=none /home/caie/projects/system_verilog/tb_eduardo/rtl/user.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module usuario
+
+Top level modules:
+	usuario
 
 } {} {}} /home/caie/projects/system_verilog/tb_eduardo/sim/testbench.sv {1 {vlog -work butao_ass_library_name -sv -stats=none /home/caie/projects/system_verilog/tb_eduardo/sim/testbench.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
