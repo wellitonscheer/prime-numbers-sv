@@ -1,0 +1,86 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/caie/projects/system_verilog/tb_eduardo/sim
+vbutton
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1731531555
+!i10b 1
+!s100 4]>@8GY`V:VjXOV7e^o>e0
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IAfVPmO2kc`B;[ZC4iN:@32
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1731108573
+8/home/caie/projects/system_verilog/tb_eduardo/proto/button.sv
+F/home/caie/projects/system_verilog/tb_eduardo/proto/button.sv
+!i122 6
+L0 1 70
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1731531555.000000
+!s107 /home/caie/projects/system_verilog/tb_eduardo/proto/button.sv|
+!s90 -reportprogress|300|-work|butao_ass_library_name|-sv|-stats=none|/home/caie/projects/system_verilog/tb_eduardo/proto/button.sv|
+!i113 1
+Z7 o-work butao_ass_library_name -sv
+Z8 tCvgOpt 0
+vtestbench
+R1
+R2
+!i10b 1
+!s100 hEP:m72H[Ka4Z@6HBO25P1
+R3
+I85JEUAHAi8BUzaMJZC:Fj1
+R4
+S1
+R0
+w1731108601
+8/home/caie/projects/system_verilog/tb_eduardo/sim/testbench.sv
+F/home/caie/projects/system_verilog/tb_eduardo/sim/testbench.sv
+!i122 7
+L0 1 56
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/caie/projects/system_verilog/tb_eduardo/sim/testbench.sv|
+!s90 -reportprogress|300|-work|butao_ass_library_name|-sv|-stats=none|/home/caie/projects/system_verilog/tb_eduardo/sim/testbench.sv|
+!i113 1
+R7
+R8
+vtoggler
+R1
+R2
+!i10b 1
+!s100 Z7c:^TZ>C02a8VV`Y_`g93
+R3
+IKU<2`BHm_CEY0ORX8P^Gn0
+R4
+S1
+R0
+w1731108532
+8/home/caie/projects/system_verilog/tb_eduardo/rtl/toggler.sv
+F/home/caie/projects/system_verilog/tb_eduardo/rtl/toggler.sv
+!i122 8
+L0 1 17
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/caie/projects/system_verilog/tb_eduardo/rtl/toggler.sv|
+!s90 -reportprogress|300|-work|butao_ass_library_name|-sv|-stats=none|/home/caie/projects/system_verilog/tb_eduardo/rtl/toggler.sv|
+!i113 1
+R7
+R8

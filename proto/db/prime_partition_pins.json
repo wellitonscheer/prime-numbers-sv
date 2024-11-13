@@ -1,0 +1,45 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "prime_o",
+					"strict" : false
+				},
+				{
+					"name" : "valid_o",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "rst_n",
+					"strict" : false
+				},
+				{
+					"name" : "data_i[1]",
+					"strict" : false
+				},
+				{
+					"name" : "data_i[0]",
+					"strict" : false
+				},
+				{
+					"name" : "data_i[3]",
+					"strict" : false
+				},
+				{
+					"name" : "data_i[2]",
+					"strict" : false
+				},
+				{
+					"name" : "en_i",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,136 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/caie/projects/system_verilog/tb_eduardo/sim
+vbtnobouncer
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1731531556
+!i10b 1
+!s100 Uk9X9c>kYjCnhl2cRGB4D0
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I:L?ZkE[QH>Y0POMQ9_FH;0
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1731531479
+8/home/caie/projects/system_verilog/tb_eduardo/proto/btnobouncer.sv
+F/home/caie/projects/system_verilog/tb_eduardo/proto/btnobouncer.sv
+!i122 13
+L0 1 25
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1731531556.000000
+!s107 /home/caie/projects/system_verilog/tb_eduardo/proto/btnobouncer.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/caie/projects/system_verilog/tb_eduardo/proto/btnobouncer.sv|
+!i113 1
+Z7 o-work work -sv
+Z8 tCvgOpt 0
+vprime
+R1
+R2
+!i10b 1
+!s100 [7bQIAaO=^Sol8IoZ?9BH3
+R3
+I3e7[WH=]8Wa_85kC2h6>X0
+R4
+S1
+R0
+Z9 w1731531244
+8/home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv
+F/home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv
+!i122 10
+L0 37 110
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/caie/projects/system_verilog/tb_eduardo/rtl/prime.sv|
+!i113 1
+R7
+R8
+vprime_tb
+R1
+R2
+!i10b 1
+!s100 [[QPK`^B:99R`zT>H?8_T1
+R3
+IF<8UH6JKGAljTTbA71^n81
+R4
+S1
+R0
+w1731384268
+8/home/caie/projects/system_verilog/tb_eduardo/sim/prime_tb.sv
+F/home/caie/projects/system_verilog/tb_eduardo/sim/prime_tb.sv
+!i122 9
+Z10 L0 1 82
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/caie/projects/system_verilog/tb_eduardo/sim/prime_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/caie/projects/system_verilog/tb_eduardo/sim/prime_tb.sv|
+!i113 1
+R7
+R8
+vusuario
+R1
+R2
+!i10b 1
+!s100 KU466UjO59BM6dh75A4NQ3
+R3
+I6YI8cX76F?iQ8XVeB5fL61
+R4
+S1
+R0
+R9
+8/home/caie/projects/system_verilog/tb_eduardo/rtl/user.sv
+F/home/caie/projects/system_verilog/tb_eduardo/rtl/user.sv
+!i122 12
+L0 82 73
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/caie/projects/system_verilog/tb_eduardo/rtl/user.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/caie/projects/system_verilog/tb_eduardo/rtl/user.sv|
+!i113 1
+R7
+R8
+vusuario_tb
+R1
+R2
+!i10b 1
+!s100 d5;Ag3E<_>?[SF<DNGDS?3
+R3
+I1nAW<S6gjFH7ajm>8MBGB1
+R4
+S1
+R0
+R9
+8/home/caie/projects/system_verilog/tb_eduardo/sim/usuario_tb.sv
+F/home/caie/projects/system_verilog/tb_eduardo/sim/usuario_tb.sv
+!i122 11
+R10
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/caie/projects/system_verilog/tb_eduardo/sim/usuario_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/caie/projects/system_verilog/tb_eduardo/sim/usuario_tb.sv|
+!i113 1
+R7
+R8
